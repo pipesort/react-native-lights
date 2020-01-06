@@ -29,8 +29,8 @@ function Homepage({navigation}) {
         </Text>
         <Text
           style={styles.title}
-          onPress={() => navigation.navigate('CardSlider')}>
-          Card slider
+          onPress={() => navigation.navigate('PinterestCards')}>
+          Pinterest cards
         </Text>
       </View>
     </View>
