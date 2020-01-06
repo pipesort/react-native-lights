@@ -27,7 +27,11 @@ function Homepage({navigation}) {
           onPress={() => navigation.navigate('ColoredCards')}>
           Colored Cards
         </Text>
-        <Text style={styles.title}>Card Three</Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('CardSlider')}>
+          Card slider
+        </Text>
       </View>
     </View>
   );
