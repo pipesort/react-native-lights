@@ -4,7 +4,7 @@ import {View,Text} from 'react-native'
 function CardContent(){
     return(
         <View>
-            <Text>
+            <Text style={{fontSize:24}}>
                 Have a good day!
             </Text>
         </View>

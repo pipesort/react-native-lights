@@ -22,7 +22,11 @@ function Homepage({navigation}) {
           onPress={() => navigation.navigate('BottomSheet')}>
           Bottom Sheet
         </Text>
-        <Text style={styles.title}>Card Two</Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('ColoredCards')}>
+          Colored Cards
+        </Text>
         <Text style={styles.title}>Card Three</Text>
       </View>
     </View>

@@ -19,8 +19,8 @@ import {
 import { NavigationNativeContainer } from '@react-navigation/native';
 import Homepage from './src/screens/Homepage';
 import BottomSheet from './src/components/BottomSheet';
+import ColoredCards from './src/components/ColoredCards';
 import { createStackNavigator } from '@react-navigation/stack';
-
 const Stack = createStackNavigator();
 const App = () => {
   return (
@@ -28,6 +28,7 @@ const App = () => {
       <Stack.Navigator>
       <Stack.Screen name="Home" component={Homepage} />
       <Stack.Screen name="BottomSheet" component={BottomSheet} />
+      <Stack.Screen name="ColoredCards" component={ColoredCards} />
     </Stack.Navigator>
     </NavigationNativeContainer>
   );

@@ -24,14 +24,15 @@ function BottomSheet() {
       <RBSheet
         ref={c => (this.panel = c)}
         height={300}
-        duration={500}
+        duration={300}
         closeOnDragDown={true}
         customStyles={{
           container: {
             justifyContent: 'center',
             alignItems: 'center',
             borderTopLeftRadius:30,
-            borderTopRightRadius:30
+            borderTopRightRadius:30,
+            // backgroundColor:'#3271a8'
           },
         }}>
         <CardContent />
