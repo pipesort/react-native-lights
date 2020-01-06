@@ -18,7 +18,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { NavigationNativeContainer } from '@react-navigation/native';
 import Homepage from './src/screens/Homepage';
-import CardOne from './src/components/CardOne';
+import BottomSheet from './src/components/BottomSheet';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -27,7 +27,7 @@ const App = () => {
     <NavigationNativeContainer>
       <Stack.Navigator>
       <Stack.Screen name="Home" component={Homepage} />
-      <Stack.Screen name="CardOne" component={CardOne} />
+      <Stack.Screen name="BottomSheet" component={BottomSheet} />
     </Stack.Navigator>
     </NavigationNativeContainer>
   );
