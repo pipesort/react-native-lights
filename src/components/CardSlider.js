@@ -10,13 +10,13 @@ import {
 
 const styles = StyleSheet.create({
   button: {
-    width: '60%',
+    width: '70%',
     marginTop: 10,
     color: 'gray',
     borderRadius: 1,
     backgroundColor: '#121111',
     borderRadius: 5,
-    padding: 3,
+    padding: 4,
   },
   cardOneContent: {
     width: 150,

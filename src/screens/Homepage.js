@@ -37,6 +37,11 @@ function Homepage({navigation}) {
           onPress={() => navigation.navigate('CardSlider')}>
           Card slider
         </Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('Showpage')}>
+          Show page
+        </Text>
       </View>
     </View>
   );
