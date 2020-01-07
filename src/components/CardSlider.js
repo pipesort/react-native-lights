@@ -8,7 +8,6 @@ import {
   Text,
 } from 'react-native';
 
-
 const styles = StyleSheet.create({
   button: {
     width: '60%',
@@ -27,8 +26,8 @@ const styles = StyleSheet.create({
     margin: 10,
     borderRadius: 15,
     padding: 10,
-  }
-})
+  },
+});
 
 const data = [
   {
@@ -68,23 +67,25 @@ function CardSlider({navigation}) {
     <ScrollView horizontal>
       {data.map(item => (
         <View style={styles.cardOneContent}>
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 20,
-            fontWeight: 'bold',
-            // marginTop: 15,
-          }}>
-          {item.title}
-        </Text>
-        <Text style={{color: 'white', fontSize: 10}}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry
-        </Text>
-        <View style={styles.button}>
-          <Text style={{color: 'white', textAlign: 'center'}}>Get started</Text>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: 20,
+              fontWeight: 'bold',
+              // marginTop: 15,
+            }}>
+            {item.title}
+          </Text>
+          <Text style={{color: 'white', fontSize: 10}}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry
+          </Text>
+          <View style={styles.button}>
+            <Text style={{color: 'white', textAlign: 'center', fontSize: 12}}>
+              Get started
+            </Text>
+          </View>
         </View>
-      </View>
       ))}
     </ScrollView>
   );

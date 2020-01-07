@@ -31,45 +31,55 @@ import {
     },
     textStyle:{
       fontSize:14,
-      textAlign:'center',
-      marginTop:-10
+      textAlign:'left',
+      marginLeft:15,
+      marginRight:15,
+      marginTop:-8,
+      fontWeight:'bold'
+    },
+    descriptionStyle:{
+      fontSize:12,
+      textAlign:'left',
+      marginLeft:15,
+      marginRight:15,
+      marginBottom:10
     }
   });
 
 const data = [
     {
-        title: 'Beautiful and dramatic Antelope Canyon',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        title: 'Beautiful and dramatic Antelope',
+        description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
         image: 'https://i.imgur.com/UYiroysl.jpg'
     },
     {
         title: 'Earlier this morning, NYC',
-        subtitle: 'Lorem ipsum dolor sit amet',
+        description: 'Lorem ipsum dolor sit amet',
         image: 'https://i.imgur.com/UPrs1EWl.jpg'
     },
     {
         title: 'White Pocket Sunset',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
+        description: 'Lorem ipsum dolor sit amet et nuncat ',
         image: 'https://i.imgur.com/MABUbpDl.jpg'
     },
     {
         title: 'Acrocorinth, Greece',
-        subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+        description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
         image: 'https://i.imgur.com/KZsmUi2l.jpg'
     },
     {
-        title: 'The lone tree, majestic landscape of New Zealand',
-        subtitle: 'Lorem ipsum dolor sit amet',
+        title: 'The lone tree, New Zealand',
+        description: 'Lorem ipsum dolor sit amet',
         image: 'https://i.imgur.com/2nCt3Sbl.jpg'
     },
     {
         title: 'Middle Earth, Germany',
-        subtitle: 'Lorem ipsum dolor sit amet',
+        description: 'Lorem ipsum dolor sit amet',
         image: 'https://i.imgur.com/lceHsT6l.jpg'
     }
 ];
 
-function PinterestCards({navigation}) {
+function PinterestCards() {
   return (
       <>
       <View style={styles.MainContainer}>
@@ -79,6 +89,7 @@ function PinterestCards({navigation}) {
             <View style={{ flex: 1, flexDirection: 'column', margin: 1 }}>
               <Image style={styles.cardStyle} source={{ uri: item.image }} />
           <Text style={styles.textStyle}>{item.title}</Text>
+          <Text style={styles.descriptionStyle}>{item.description}</Text>
             </View>
           )}
           numColumns={2}
