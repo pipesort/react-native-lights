@@ -6,6 +6,7 @@ import {
     ActivityIndicator,
     Image,
     TouchableOpacity,
+    Text
   } from 'react-native';
 
   const styles = StyleSheet.create({
@@ -13,12 +14,26 @@ import {
       justifyContent: 'center',
       flex: 1,
       paddingTop: 30,
+      paddingBottom: 10
     },
-    imageThumbnail: {
+    cardStyle: {
       justifyContent: 'center',
       alignItems: 'center',
-      height: 100,
+      height: 200,
+      backgroundColor:'#121111',
+      color:'white',
+      borderRadius:10,
+      marginBottom:10,
+      marginLeft:5,
+      marginRight:5,
+      fontSize: 16,
+      
     },
+    textStyle:{
+      fontSize:14,
+      textAlign:'center',
+      marginTop:-10
+    }
   });
 
 const data = [
@@ -62,10 +77,10 @@ function PinterestCards({navigation}) {
           data={data}
           renderItem={({ item }) => (
             <View style={{ flex: 1, flexDirection: 'column', margin: 1 }}>
-              <Image style={styles.imageThumbnail} source={{ uri: item.image }} />
+              <Image style={styles.cardStyle} source={{ uri: item.image }} />
+          <Text style={styles.textStyle}>{item.title}</Text>
             </View>
           )}
-          //Setting the number of column
           numColumns={2}
           keyExtractor={(item, index) => index.toString()}
         />
