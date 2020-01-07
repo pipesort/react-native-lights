@@ -8,6 +8,7 @@ import {
   Text,
   Button,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -21,7 +22,7 @@ const styles = StyleSheet.create({
     // width: 450,
     height: 300,
     flexDirection: 'column',
-    backgroundColor: '#2675fc',
+    backgroundColor: '#000000',
     margin: 10,
     borderRadius: 20,
     padding: 16,
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     // width: 250,
     height: 300,
     flexDirection: 'column',
-    backgroundColor: '#854e4e',
+    backgroundColor: '#2675fc',
     margin: 10,
     borderRadius: 20,
     padding: 16,
@@ -39,20 +40,26 @@ const styles = StyleSheet.create({
     // width: 250,
     height: 300,
     flexDirection: 'column',
-    backgroundColor: '#000000',
+    backgroundColor: '#854e4e',
     margin: 10,
     borderRadius: 20,
     padding: 16,
   },
   button: {
     width: 150,
+    height: 50,
     marginTop: 40,
     color: 'gray',
     borderRadius: 1,
-    backgroundColor: '#121111',
-    borderRadius: 10,
+    backgroundColor: '#05ada5',
+    borderRadius: 12,
     padding: 8,
     justifyContent: 'flex-end',
+  },
+  buttonText: {
+    color: 'white', 
+    textAlign: 'center', 
+    marginBottom: 8
   },
 });
 
@@ -60,6 +67,7 @@ function ColoredCards({navigation}) {
   return (
     <ScrollView>
       <View style={styles.card}>
+
         <View style={styles.cardOneContent}>
           <Text
             style={{
@@ -76,12 +84,14 @@ function ColoredCards({navigation}) {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
+          <TouchableOpacity>
           <View style={styles.button}>
-            <Text style={{color: 'white', textAlign: 'center'}}>
-              Get started
-            </Text>
+            <Text style={styles.buttonText}>Get started</Text>
           </View>
+          </TouchableOpacity>
         </View>
+      
+        
         <View style={styles.cardTwoContent}>
           <Text
             style={{
@@ -98,12 +108,16 @@ function ColoredCards({navigation}) {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
+          <TouchableOpacity>
           <View style={styles.button}>
-            <Text style={{color: 'white', textAlign: 'center'}}>
+            <Text style={styles.buttonText}>
               Get started
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
+        
+       
         <View style={styles.cardThreeContent}>
           <Text
             style={{
@@ -120,12 +134,15 @@ function ColoredCards({navigation}) {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
+          <TouchableOpacity>
           <View style={styles.button}>
-            <Text style={{color: 'white', textAlign: 'center'}}>
+            <Text style={styles.buttonText}>
               Get started
             </Text>
           </View>
+          </TouchableOpacity>
         </View>
+        
       </View>
     </ScrollView>
   );

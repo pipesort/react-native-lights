@@ -42,6 +42,11 @@ function Homepage({navigation}) {
           onPress={() => navigation.navigate('Showpage')}>
           Show page
         </Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('FormOne')}>
+          Forms
+        </Text>
       </View>
     </View>
   );

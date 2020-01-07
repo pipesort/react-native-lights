@@ -112,7 +112,7 @@ function Showpage({navigation}) {
         <View
           style={{
             justifyContent: 'flex-end',
-            backgroundColor: '#0062ff',
+            backgroundColor: '#ff297f',
             alignItems: 'center',
             height: 50,
             width: '50%',

@@ -86,11 +86,15 @@ function PinterestCards() {
         <FlatList
           data={data}
           renderItem={({ item }) => (
+          
             <View style={{ flex: 1, flexDirection: 'column', margin: 1 }}>
+                <TouchableOpacity>
               <Image style={styles.cardStyle} source={{ uri: item.image }} />
+              </TouchableOpacity>
           <Text style={styles.textStyle}>{item.title}</Text>
           <Text style={styles.descriptionStyle}>{item.description}</Text>
             </View>
+            
           )}
           numColumns={2}
           keyExtractor={(item, index) => index.toString()}

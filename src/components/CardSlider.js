@@ -6,21 +6,22 @@ import {
   FlatList,
   StyleSheet,
   Text,
+  TouchableOpacity,
 } from 'react-native';
 
 const styles = StyleSheet.create({
   button: {
     width: '70%',
-    marginTop: 10,
+    height: 40,
+    marginTop: 14,
     color: 'gray',
-    borderRadius: 1,
-    backgroundColor: '#121111',
-    borderRadius: 5,
+    backgroundColor: '#05ada5',
+    borderRadius: 10,
     padding: 4,
   },
   cardOneContent: {
     width: 150,
-    height: 130,
+    height: 180,
     flexDirection: 'column',
     backgroundColor: '#2675fc',
     margin: 10,
@@ -76,15 +77,23 @@ function CardSlider({navigation}) {
             }}>
             {item.title}
           </Text>
-          <Text style={{color: 'white', fontSize: 10}}>
+          <Text style={{color: 'white', fontSize: 14}}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
           </Text>
-          <View style={styles.button}>
-            <Text style={{color: 'white', textAlign: 'center', fontSize: 12}}>
-              Get started
-            </Text>
-          </View>
+          <TouchableOpacity>
+            <View style={styles.button}>
+              <Text
+                style={{
+                  color: 'white',
+                  textAlign: 'center',
+                  fontSize: 12,
+                  marginTop: 7,
+                }}>
+                Get started
+              </Text>
+            </View>
+          </TouchableOpacity>
         </View>
       ))}
     </ScrollView>
