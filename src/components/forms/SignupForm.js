@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   StyleSheet,
   Text,
   TouchableOpacity,
   TextInput,
-  ActivityIndicator,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 
@@ -13,15 +12,13 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'stretch',
     justifyContent: 'center',
-   
   },
 
   signinCard: {
     // width: 250,
-    marginTop:60,
     height: 400,
     flexDirection: 'column',
-    // backgroundColor: '#f2f2f2',
+    backgroundColor: '#f2f2f2',
     margin: 10,
     // marginTop: -10,
     borderRadius: 20,
@@ -57,18 +54,10 @@ const styles = StyleSheet.create({
   },
 });
 
-function SigninForm({navigation}) {
-  const [isClicked, setIsClicked] = useState(false);
-  const [isLoading, setLoading] = useState(false);
 
-  const stopLoading = () => {
-    
-      setLoading(!isLoading);
-   
-  };
-
+function SignupForm({navigation}) {
   return (
-    <View style={{flex: 1, backgroundColor: '#d1d1d1'}}>
+    <View style={{flex: 1, backgroundColor: 'white'}}>
       <View
         style={{
           flex: 3,
@@ -94,39 +83,29 @@ function SigninForm({navigation}) {
               style={{fontSize: 30, fontWeight: 'bold'}}
               autoFocus={true}
               maxLength={10}
-              keyboardType={'numeric'}
             />
           </View>
         </View>
       </View>
       <View style={styles.buttonCard}>
         <Text style={{color: 'gray', fontSize: 18, margin: 30}}>
-          by clicking sign in you are agree with our terms & conditions
+          By clicking Sign in you are agree with our terms & conditions
         </Text>
         <TouchableOpacity
           onPress={() => {
-            
-            stopLoading()
-            // this.panel.open();
+            this.panel.open();
           }}>
           <View style={styles.signInButton}>
             <View style={{flex: 1, flexDirection: 'row'}}>
-              {isLoading == false ? (
-                <Text
-                  style={{
-                    color: 'white',
-                    marginTop: 12,
-                    marginLeft: 5,
-                    fontSize: 18,
-                  }}>
-                  Sign in
-                </Text>
-              ) : (
-                <ActivityIndicator
-                  size="small"
-                  color="#6cd4b8"
-                />
-              )}
+              <Text
+                style={{
+                  color: 'white',
+                  marginTop: 12,
+                  marginLeft: 5,
+                  fontSize: 18,
+                }}>
+                Sign in
+              </Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -139,6 +118,9 @@ function SigninForm({navigation}) {
         closeOnDragDown={true}
         customStyles={{
           container: {
+            // justifyContent: 'center',
+            // alignItems: 'center',
+           
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
           },
@@ -170,13 +152,11 @@ function SigninForm({navigation}) {
               style={{fontSize: 30, fontWeight: 'bold'}}
               autoFocus={true}
               maxLength={4}
-              keyboardType={'numeric'}
             />
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              this.panel.close();
-            }}>
+          <TouchableOpacity onPress={() => {
+            this.panel.close();
+          }}>
             <View style={styles.otpButton}>
               <View style={{flex: 1, flexDirection: 'row'}}>
                 <Text
@@ -197,4 +177,4 @@ function SigninForm({navigation}) {
   );
 }
 
-export default SigninForm;
+export default SignupForm;

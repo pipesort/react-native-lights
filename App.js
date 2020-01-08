@@ -9,6 +9,7 @@ import CardSlider from './src/components/CardSlider';
 import Showpage from './src/components/Showpage';
 import BottomSheetCards from './src/components/BottomSheetCards'
 import SigninForm from './src/components/forms/SigninForm'
+import SignupForm from './src/components/forms/SignupForm'
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -26,7 +27,8 @@ const App = () => {
         title:''
       }} component={Showpage} />
       <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
-      <Stack.Screen name="SigninForm" component={SigninForm} />
+      <Stack.Screen name="SigninForm" options ={{headerShown:false}} component={SigninForm} />
+      <Stack.Screen name="SignupForm" component={SignupForm} />
     </Stack.Navigator>
     </NavigationNativeContainer>
   );

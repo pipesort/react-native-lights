@@ -45,7 +45,12 @@ function Homepage({navigation}) {
         <Text
           style={styles.title}
           onPress={() => navigation.navigate('SigninForm')}>
-          Forms
+          Signin Form
+        </Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('SignupForm')}>
+          Signup form
         </Text>
       </View>
     </View>
