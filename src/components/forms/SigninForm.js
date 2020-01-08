@@ -172,7 +172,6 @@ function SigninForm({navigation}) {
                 onPress={() => {
                   setLoading(!isLoading);
                   stopLoading();
-                  // this.panel.close();
                 }}>
                 <View style={styles.otpButton}>
                   <View style={{flex: 1, flexDirection: 'row'}}>
@@ -192,10 +191,10 @@ function SigninForm({navigation}) {
               <View
                 style={{flex: 1, flexDirection: 'row',margin:5,marginLeft:10}}>
                   {isLoading == true ? 
-                <ActivityIndicator size="small" color="#6cd4b8" />
+                <ActivityIndicator size="small" color="#ff297f" />
                 :
                 <View style={{marginTop:-10}}>
-                  <Icon name="check" color="#6cd4b8" size={30} />
+                  <Icon name="check" color="#ff297f" size={30} />
                   </View>
                 } 
               </View>
