@@ -8,17 +8,16 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
   container: {
     alignItems: 'stretch',
     justifyContent: 'center',
-   
   },
 
   signinCard: {
     // width: 250,
-    marginTop:60,
     height: 400,
     flexDirection: 'column',
     // backgroundColor: '#f2f2f2',
@@ -53,22 +52,25 @@ const styles = StyleSheet.create({
     width: '50%',
     borderRadius: 20,
     margin: 10,
+    marginLeft:5,
     marginRight: 30,
   },
 });
 
 function SigninForm({navigation}) {
-  const [isClicked, setIsClicked] = useState(false);
   const [isLoading, setLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const stopLoading = () => {
-    
-      setLoading(!isLoading);
-   
+    setTimeout(() => {
+      setLoading(isLoading);
+      setIsSuccess(!isSuccess);
+      navigation.navigate('Home')
+    }, 2000);
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: '#d1d1d1'}}>
+    <View style={{flex: 1, backgroundColor: '#e6e6e6'}}>
       <View
         style={{
           flex: 3,
@@ -101,32 +103,23 @@ function SigninForm({navigation}) {
       </View>
       <View style={styles.buttonCard}>
         <Text style={{color: 'gray', fontSize: 18, margin: 30}}>
-          by clicking sign in you are agree with our terms & conditions
+          By clicking Sign in you are agree with our terms & conditions
         </Text>
         <TouchableOpacity
           onPress={() => {
-            
-            stopLoading()
-            // this.panel.open();
+            this.panel.open();
           }}>
           <View style={styles.signInButton}>
             <View style={{flex: 1, flexDirection: 'row'}}>
-              {isLoading == false ? (
-                <Text
-                  style={{
-                    color: 'white',
-                    marginTop: 12,
-                    marginLeft: 5,
-                    fontSize: 18,
-                  }}>
-                  Sign in
-                </Text>
-              ) : (
-                <ActivityIndicator
-                  size="small"
-                  color="#6cd4b8"
-                />
-              )}
+              <Text
+                style={{
+                  color: 'white',
+                  marginTop: 12,
+                  marginLeft: 5,
+                  fontSize: 18,
+                }}>
+                Sign in
+              </Text>
             </View>
           </View>
         </TouchableOpacity>
@@ -150,47 +143,65 @@ function SigninForm({navigation}) {
             padding: 16,
             borderRadius: 20,
           }}>
-          <Text
-            style={{
-              color: 'black',
-              fontSize: 20,
-              fontWeight: 'bold',
-              width: 150,
-              //   marginTop: 5,
-            }}>
-            enter one time password
-          </Text>
-          <Text style={{color: 'gray', fontSize: 18, width: 200}}>
-            please enter otp sent to your mobile number
-          </Text>
           <View>
-            <TextInput
-              placeholder="1234"
-              placeholderTextColor="#7d7d7d"
-              style={{fontSize: 30, fontWeight: 'bold'}}
-              autoFocus={true}
-              maxLength={4}
-              keyboardType={'numeric'}
-            />
-          </View>
-          <TouchableOpacity
-            onPress={() => {
-              this.panel.close();
-            }}>
-            <View style={styles.otpButton}>
-              <View style={{flex: 1, flexDirection: 'row'}}>
-                <Text
-                  style={{
-                    color: 'white',
-                    marginTop: 12,
-                    marginLeft: 5,
-                    fontSize: 18,
-                  }}>
-                  Submit
-                </Text>
-              </View>
+            <Text
+              style={{
+                color: 'black',
+                fontSize: 20,
+                fontWeight: 'bold',
+                width: 150,
+                //   marginTop: 5,
+              }}>
+              enter one time password
+            </Text>
+            <Text style={{color: 'gray', fontSize: 18, width: 200}}>
+              please enter otp sent to your mobile number
+            </Text>
+            <View>
+              <TextInput
+                placeholder="1234"
+                placeholderTextColor="#7d7d7d"
+                style={{fontSize: 30, fontWeight: 'bold'}}
+                autoFocus={true}
+                maxLength={4}
+                keyboardType={'numeric'}
+              />
             </View>
-          </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                setLoading(!isLoading);
+                stopLoading();
+                // this.panel.close();
+              }}>
+              <View style={styles.otpButton}>
+                {isSuccess == false ? (
+                  <View style={{flex: 1, flexDirection: 'row'}}>
+                    {isLoading == false ? (
+                      <Text
+                        style={{
+                          color: 'white',
+                          marginTop: 12,
+                          marginLeft: 5,
+                          fontSize: 18,
+                        }}>
+                        Submit
+                      </Text>
+                    ) : (
+                      <ActivityIndicator size="small" color="#6cd4b8" />
+                    )}
+                  </View>
+                ) : (
+                  <View style={{flex: 1, flexDirection: 'row',marginTop:10}}>
+                    {isLoading == false ? (
+                       <Icon name="check" color='#6cd4b8' size={30} />
+                    ) : (
+                     null
+                    )}
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </RBSheet>
     </View>
