@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     width: '50%',
     borderRadius: 20,
     margin: 10,
-    marginLeft:5,
+    marginLeft: 5,
     marginRight: 30,
   },
 });
@@ -65,7 +65,7 @@ function SigninForm({navigation}) {
     setTimeout(() => {
       setLoading(isLoading);
       setIsSuccess(!isSuccess);
-      navigation.navigate('Home')
+      navigation.navigate('Home');
     }, 2000);
   };
 
@@ -167,40 +167,39 @@ function SigninForm({navigation}) {
                 keyboardType={'numeric'}
               />
             </View>
-            <TouchableOpacity
-              onPress={() => {
-                setLoading(!isLoading);
-                stopLoading();
-                // this.panel.close();
-              }}>
-              <View style={styles.otpButton}>
-                {isSuccess == false ? (
+            {isSuccess == false && isLoading == false ? (
+              <TouchableOpacity
+                onPress={() => {
+                  setLoading(!isLoading);
+                  stopLoading();
+                  // this.panel.close();
+                }}>
+                <View style={styles.otpButton}>
                   <View style={{flex: 1, flexDirection: 'row'}}>
-                    {isLoading == false ? (
-                      <Text
-                        style={{
-                          color: 'white',
-                          marginTop: 12,
-                          marginLeft: 5,
-                          fontSize: 18,
-                        }}>
-                        Submit
-                      </Text>
-                    ) : (
-                      <ActivityIndicator size="small" color="#6cd4b8" />
-                    )}
+                    <Text
+                      style={{
+                        color: 'white',
+                        marginTop: 12,
+                        marginLeft: 5,
+                        fontSize: 18,
+                      }}>
+                      Submit
+                    </Text>
                   </View>
-                ) : (
-                  <View style={{flex: 1, flexDirection: 'row',marginTop:10}}>
-                    {isLoading == false ? (
-                       <Icon name="check" color='#6cd4b8' size={30} />
-                    ) : (
-                     null
-                    )}
+                </View>
+              </TouchableOpacity>
+            ) : (
+              <View
+                style={{flex: 1, flexDirection: 'row',margin:5,marginLeft:10}}>
+                  {isLoading == true ? 
+                <ActivityIndicator size="small" color="#6cd4b8" />
+                :
+                <View style={{marginTop:-10}}>
+                  <Icon name="check" color="#6cd4b8" size={30} />
                   </View>
-                )}
+                } 
               </View>
-            </TouchableOpacity>
+            )}
           </View>
         </View>
       </RBSheet>
