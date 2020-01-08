@@ -8,7 +8,7 @@ import PinterestCards from './src/components/PinterestCards';
 import CardSlider from './src/components/CardSlider';
 import Showpage from './src/components/Showpage';
 import BottomSheetCards from './src/components/BottomSheetCards'
-import FormOne from './src/components/forms/FormOne'
+import SigninForm from './src/components/forms/SigninForm'
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -26,7 +26,7 @@ const App = () => {
         title:''
       }} component={Showpage} />
       <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
-      <Stack.Screen name="FormOne" component={FormOne} />
+      <Stack.Screen name="SigninForm" component={SigninForm} />
     </Stack.Navigator>
     </NavigationNativeContainer>
   );

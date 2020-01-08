@@ -50,16 +50,12 @@ const styles = StyleSheet.create({
     width: '50%',
     borderRadius: 20,
     margin: 10,
-    // marginLeft: 30,
     marginRight: 30,
   },
 });
 
-ratingCompleted = rating => {
-  console.log('Rating is: ' + rating);
-};
 
-function FormOne({navigation}) {
+function SigninForm({navigation}) {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <View
@@ -82,10 +78,11 @@ function FormOne({navigation}) {
           </Text>
           <View>
             <TextInput
-              placeholder="999999999"
+              placeholder="9999999999"
               placeholderTextColor="#7d7d7d"
               style={{fontSize: 30, fontWeight: 'bold'}}
               autoFocus={true}
+              maxLength={10}
             />
           </View>
         </View>
@@ -123,8 +120,7 @@ function FormOne({navigation}) {
           container: {
             // justifyContent: 'center',
             // alignItems: 'center',
-            margin: 10,
-            padding: 16,
+           
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
           },
@@ -155,6 +151,7 @@ function FormOne({navigation}) {
               placeholderTextColor="#7d7d7d"
               style={{fontSize: 30, fontWeight: 'bold'}}
               autoFocus={true}
+              maxLength={4}
             />
           </View>
           <TouchableOpacity onPress={() => {
@@ -180,4 +177,4 @@ function FormOne({navigation}) {
   );
 }
 
-export default FormOne;
+export default SigninForm;

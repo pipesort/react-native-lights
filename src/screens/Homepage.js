@@ -44,7 +44,7 @@ function Homepage({navigation}) {
         </Text>
         <Text
           style={styles.title}
-          onPress={() => navigation.navigate('FormOne')}>
+          onPress={() => navigation.navigate('SigninForm')}>
           Forms
         </Text>
       </View>
