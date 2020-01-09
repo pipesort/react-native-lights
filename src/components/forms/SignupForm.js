@@ -497,7 +497,7 @@ function SignupForm({navigation}) {
     },
   });
 
-  const [isCity, setCity] = useState('');
+
 
   return (
     <View style={{flex: 1, backgroundColor: '#c2c2c2'}}>
@@ -528,9 +528,6 @@ function SignupForm({navigation}) {
                   <City
                     id={item}
                     city={item}
-                    setCity={() => {
-                      setCity(item);
-                    }}
                   />
                 )}
                 label="city"
