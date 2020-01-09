@@ -12,6 +12,7 @@ import SigninForm from './src/components/forms/SigninForm';
 import SignupForm from './src/components/forms/SignupForm';
 import {createStackNavigator} from '@react-navigation/stack';
 import Otp from './src/components/Otp';
+import LandingPage from './src/screens/landingPage';
 
 const Stack = createStackNavigator();
 
@@ -24,19 +25,8 @@ const App = () => {
         <Stack.Screen name="ColoredCards" component={ColoredCards} />
         <Stack.Screen name="PinterestCards" component={PinterestCards} />
         <Stack.Screen name="CardSlider" component={CardSlider} />
-        <Stack.Screen
-          name="Showpage"
-          options={{
-            title: '',
-          }}
-          component={Showpage}
-        />
-        <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
-        <Stack.Screen
-          name="SigninForm"
-          options={{headerShown: false}}
-          component={SigninForm}
-        />
+       
+       
         <Stack.Screen
           name="SignupForm"
           options={{
@@ -52,6 +42,27 @@ const App = () => {
           }}
           options={{headerShown: false}}
           component={Otp}
+        />
+        <Stack.Screen
+          name="LandingPage"
+          options={{
+            title: '',
+          }}
+          options={{headerShown: false}}
+          component={LandingPage}
+        />
+         <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
+        <Stack.Screen
+          name="SigninForm"
+          options={{headerShown: false}}
+          component={SigninForm}
+        />
+         <Stack.Screen
+          name="Showpage"
+          options={{
+            title: '',
+          }}
+          component={Showpage}
         />
       </Stack.Navigator>
     </NavigationNativeContainer>

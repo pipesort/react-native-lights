@@ -52,6 +52,11 @@ function Homepage({navigation}) {
           onPress={() => navigation.navigate('SignupForm')}>
           Signup form
         </Text>
+        <Text
+          style={styles.title}
+          onPress={() => navigation.navigate('LandingPage')}>
+         Landing page
+        </Text>
       </View>
     </View>
   );

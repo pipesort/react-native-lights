@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useRef} from 'react';
 import {
   View,
   StyleSheet,
@@ -57,15 +57,19 @@ const styles = StyleSheet.create({
   },
 });
 
-function SigninForm({navigation}) {
+function SigninForm({navigation, close}) {
+
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const ref = useRef(null);
 
   const stopLoading = () => {
     setTimeout(() => {
       setLoading(isLoading);
       setIsSuccess(!isSuccess);
-      navigation.navigate('Home');
+      ref.current.close()
+      close();
+      navigation.navigate('Showpage');
     }, 2000);
   };
 
@@ -107,7 +111,7 @@ function SigninForm({navigation}) {
         </Text>
         <TouchableOpacity
           onPress={() => {
-            this.panel.open();
+            ref.current.open()
           }}>
           <View style={styles.signInButton}>
             <View style={{flex: 1, flexDirection: 'row'}}>
@@ -126,7 +130,7 @@ function SigninForm({navigation}) {
       </View>
 
       <RBSheet
-        ref={c => (this.panel = c)}
+        ref={ref}
         height={300}
         duration={300}
         closeOnDragDown={true}
