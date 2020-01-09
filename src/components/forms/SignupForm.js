@@ -70,35 +70,35 @@ const styles = StyleSheet.create({
 
 const cities = [
   'Arcot',
-'Chengalpattu',
-'Chennai',
-'Chidambaram',
-'Coimbatore',
-'Cuddalore',
-'Dharmapuri',
-'Dindigul',
-'Erode',
-'Kanchipuram',
-'Kanniyakumari',
-'Kodaikanal',
-'Kumbakonam',
-'Madurai',
-'Mamallapuram',
-'Nagappattinam',
-'Nagercoil',
-'Palayankottai',
-'Pudukkottai',
-'Rajapalaiyam',
-'Ramanathapuram',
-'Salem',
-'Thanjavur',
-'Tiruchchirappalli',
-'Tirunelveli',
-'Tiruppur',
-'Tuticorin',
-'Udhagamandalam',
-'Vellore'
-]
+  'Chengalpattu',
+  'Chennai',
+  'Chidambaram',
+  'Coimbatore',
+  'Cuddalore',
+  'Dharmapuri',
+  'Dindigul',
+  'Erode',
+  'Kanchipuram',
+  'Kanniyakumari',
+  'Kodaikanal',
+  'Kumbakonam',
+  'Madurai',
+  'Mamallapuram',
+  'Nagappattinam',
+  'Nagercoil',
+  'Palayankottai',
+  'Pudukkottai',
+  'Rajapalaiyam',
+  'Ramanathapuram',
+  'Salem',
+  'Thanjavur',
+  'Tiruchchirappalli',
+  'Tirunelveli',
+  'Tiruppur',
+  'Tuticorin',
+  'Udhagamandalam',
+  'Vellore',
+];
 
 const states = [
   'Andaman & Nicobar',
@@ -406,9 +406,17 @@ function TextBox({placeholder, label}) {
   );
 }
 
-function SelectBox({placeholder, label, renderItem, onSelect, data, onFocus,onChangeText}) {
-    const [value,setValue] = useState('')
-    const ref = useRef(null)
+function SelectBox({
+  placeholder,
+  label,
+  renderItem,
+  onSelect,
+  data,
+  onFocus,
+  onTextChange,
+}) {
+  const [value, setValue] = useState('');
+  const ref = useRef(null);
   return (
     <>
       <View style={{marginBottom: 10}}>
@@ -421,7 +429,6 @@ function SelectBox({placeholder, label, renderItem, onSelect, data, onFocus,onCh
             style={{fontSize: 18, fontWeight: 'bold'}}
             onFocus={() => ref.current.open()}
             value={value}
-            onChangeText={onChangeText}
           />
         </View>
       </View>
@@ -439,48 +446,46 @@ function SelectBox({placeholder, label, renderItem, onSelect, data, onFocus,onCh
         <ScrollView>
           <FlatList
             data={data}
-            renderItem={renderItem}
-            onSelect={item => {
-              console.log("item", item)
-              setValue(item)
-              onSelect(item)
+            renderItem={item => {
+              return (
+                <TouchableOpacity
+                  onPress={() => {
+                    setValue(item.item);
+                    ref.current.close()
+                  }}>
+                  {renderItem(item)}
+                </TouchableOpacity>
+              );
             }}
             keyExtractor={item => item.id}
           />
         </ScrollView>
       </RBSheet>
-      
     </>
   );
 }
 
-function City({city}) {
+function City({city, setCity}) {
   return (
-    <TouchableOpacity>
-      <View style={{padding: 5, margin: 10}}>
-        <Text style={{color: 'black', fontSize: 16}}>{city}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={{padding: 5, margin: 10}}>
+      <Text style={{color: 'black', fontSize: 16}}>{city}</Text>
+    </View>
   );
 }
 
 function State({state}) {
   return (
-    <TouchableOpacity>
-      <View style={{padding: 5, margin: 10}}>
-        <Text style={{color: 'black', fontSize: 16}}>{state}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={{padding: 5, margin: 10}}>
+      <Text style={{color: 'black', fontSize: 16}}>{state}</Text>
+    </View>
   );
 }
 
 function Country({country}) {
   return (
-    <TouchableOpacity>
-      <View style={{padding: 5, margin: 10}}>
-        <Text style={{color: 'black', fontSize: 16}}>{country}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={{padding: 5, margin: 10}}>
+      <Text style={{color: 'black', fontSize: 16}}>{country}</Text>
+    </View>
   );
 }
 
@@ -491,6 +496,8 @@ function SignupForm({navigation}) {
       backgroundColor: 'transparent',
     },
   });
+
+  const [isCity, setCity] = useState('');
 
   return (
     <View style={{flex: 1, backgroundColor: '#c2c2c2'}}>
@@ -517,12 +524,16 @@ function SignupForm({navigation}) {
                 placeholder="select city"
                 data={cities}
                 onSelect={item => item}
-                renderItem={({item}) => <City id={item} city={item} />}
+                renderItem={({item}) => (
+                  <City
+                    id={item}
+                    city={item}
+                    setCity={() => {
+                      setCity(item);
+                    }}
+                  />
+                )}
                 label="city"
-                onFocus={() => {
-                    this.panel.open();
-                  }}
-                onChangeText={text => onChangeText(text)}
               />
               <SelectBox
                 placeholder="select state"
@@ -530,16 +541,10 @@ function SignupForm({navigation}) {
                 onSelect={item => item}
                 renderItem={({item}) => <State id={item} state={item} />}
                 label="state"
-                onFocus={() => {
-                    this.panel.open();
-                  }}
               />
               <SelectBox
                 placeholder="select country"
                 data={countries}
-                onFocus={() => {
-                  this.panel.open();
-                }}
                 onSelect={item => item}
                 renderItem={({item}) => <Country id={item} country={item} />}
                 label="country"
