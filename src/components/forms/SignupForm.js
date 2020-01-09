@@ -410,10 +410,7 @@ function SelectBox({
   placeholder,
   label,
   renderItem,
-  onSelect,
   data,
-  onFocus,
-  onTextChange,
 }) {
   const [value, setValue] = useState('');
   const ref = useRef(null);
@@ -465,7 +462,7 @@ function SelectBox({
   );
 }
 
-function City({city, setCity}) {
+function City({city}) {
   return (
     <View style={{padding: 5, margin: 10}}>
       <Text style={{color: 'black', fontSize: 16}}>{city}</Text>
