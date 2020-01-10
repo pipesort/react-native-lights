@@ -1,102 +1,158 @@
 import React from 'react';
 import {
-  SafeAreaView,
   View,
   ScrollView,
-  FlatList,
   StyleSheet,
   Text,
   TouchableOpacity,
 } from 'react-native';
 
-const styles = StyleSheet.create({
-  button: {
-    width: '70%',
-    height: 40,
-    marginTop: 14,
-    color: 'gray',
-    backgroundColor: '#05ada5',
-    borderRadius: 10,
-    padding: 4,
-  },
-  cardOneContent: {
-    width: 150,
-    height: 180,
-    flexDirection: 'column',
-    backgroundColor: '#2675fc',
-    margin: 10,
-    borderRadius: 15,
-    padding: 10,
-  },
-});
 
-const data = [
+
+const listData = [
   {
-    title: 'Card1',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'https://i.imgur.com/UYiroysl.jpg',
+    title: 'card1',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/UYiroysl.jpg',
+    buttonTitle: 'Get Started',
   },
   {
-    title: 'Card2',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/UPrs1EWl.jpg',
+    title: 'card2',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/UPrs1EWl.jpg',
+    buttonTitle: 'Get Started',
   },
   {
-    title: 'Card3',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-    illustration: 'https://i.imgur.com/MABUbpDl.jpg',
+    title: 'card3',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/MABUbpDl.jpg',
+    buttonTitle: 'Get Started',
   },
   {
-    title: 'Card4',
-    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'https://i.imgur.com/KZsmUi2l.jpg',
+    title: 'card4',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/KZsmUi2l.jpg',
+    buttonTitle: 'Get Started',
   },
   {
-    title: 'Card5',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/2nCt3Sbl.jpg',
+    title: 'card5',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/2nCt3Sbl.jpg',
+    buttonTitle: 'Get Started',
   },
   {
-    title: 'Card6',
-    subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/lceHsT6l.jpg',
+    title: 'card6',
+    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    image: 'https://i.imgur.com/lceHsT6l.jpg',
+    buttonTitle: 'Get Started',
   },
 ];
 
-function CardSlider({navigation}) {
+function SlidingCards({
+  data,
+  cardBackground,
+  cardHeight,
+  cardFlexDirection,
+  cardMargin,
+  cardBorderRadius,
+  cardPadding,
+  cardWidth,
+  TextColor,
+  TextSize,
+  TextWeight,
+  buttonTextColor,
+  buttonTextAlign,
+  buttonTextSize,
+  buttonTextTop,
+  buttonWidth,
+  buttonHeight,
+  buttonTop,
+  buttonBackground,
+  buttonBorderRadius,
+  buttonPadding
+}) {
+  const card = StyleSheet.create({
+    cardStyle: {
+      backgroundColor: cardBackground,
+      height: cardHeight,
+      flexDirection: cardFlexDirection,
+      margin: cardMargin,
+      borderRadius: cardBorderRadius,
+      padding: cardPadding,
+      width: cardWidth,
+    },
+    cardTextStyle: {
+      color: TextColor,
+      fontSize: TextSize,
+      fontWeight: TextWeight,
+    },
+    button: {
+      width: buttonWidth,
+      height: buttonHeight,
+      marginTop: buttonTop,
+      backgroundColor: buttonBackground,
+      borderRadius: buttonBorderRadius,
+      padding: buttonPadding,
+    },
+    buttonTitleStyle:{
+      color: buttonTextColor,
+      textAlign: buttonTextAlign,
+      fontSize: buttonTextSize,
+      marginTop: buttonTextTop,
+    }
+  });
+
   return (
     <ScrollView horizontal>
-      {data.map(item => (
-        <View style={styles.cardOneContent}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: 20,
-              fontWeight: 'bold',
-              // marginTop: 15,
-            }}>
-            {item.title}
-          </Text>
+      {data.map(cardData => (
+        <View style={card.cardStyle}>
+          <Text style={card.cardTextStyle}>{cardData.title}</Text>
           <Text style={{color: 'white', fontSize: 14}}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry
+            {cardData.description}
           </Text>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text
-                style={{
-                  color: 'white',
-                  textAlign: 'center',
-                  fontSize: 12,
-                  marginTop: 7,
-                }}>
-                Get started
-              </Text>
-            </View>
-          </TouchableOpacity>
+          {cardData.buttonTitle ? (
+            <TouchableOpacity>
+              <View style={card.button}>
+                <Text
+                  style={card.buttonTitleStyle}>
+                  {cardData.buttonTitle}
+                </Text>
+              </View>
+            </TouchableOpacity>
+          ) : null}
         </View>
       ))}
     </ScrollView>
+  );
+}
+
+function CardSlider() {
+  return (
+    <>
+      <SlidingCards
+        data={listData}
+        cardWidth={150}
+        cardHeight={180}
+        cardFlexDirection="column"
+        cardBackground="#2675fc"
+        cardMargin={10}
+        cardBorderRadius={15}
+        cardPadding={10}
+        TextColor="white"
+        TextSize={20}
+        TextWeight="bold"
+        buttonTextColor= 'white'
+        buttonTextAlign= 'center'
+        buttonTextSize= {12}
+        buttonTextTop= {7}
+        buttonWidth= '70%'
+        buttonHeight= {40}
+        buttonTop= {14}
+        buttonBackground= '#05ada5'
+        buttonBorderRadius= {10}
+        buttonPadding= {4}
+      />
+    </>
   );
 }
 
