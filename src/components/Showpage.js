@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import {Image, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {Rating, AirbnbRating} from 'react-native-ratings';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#f2f2f2',
     margin: 10,
-    marginTop: -10,
+    // marginTop: -10,
     borderRadius: 20,
     // borderBottomLeftRadius: 40,
     // borderTopRightRadius: 40,
@@ -46,11 +46,13 @@ function Showpage({navigation}) {
         // color="white"
         style={{marginRight: 15}}
         onPress={() => {
-            this.panel.open();
+            ref.current.open();
         }}
       />
     ),
   });
+
+  const ref = useRef(null)
   return (
     <View style={{flex: 1, backgroundColor: 'white', marginTop: -58}}>
       <View style={{flex: 2}}>
@@ -135,7 +137,7 @@ function Showpage({navigation}) {
         </View>
       </TouchableOpacity>
       <RBSheet
-        ref={c => (this.panel = c)}
+        ref={ref}
         height={300}
         duration={300}
         closeOnDragDown={true}

@@ -7,8 +7,10 @@ import {
   TextInput,
   FlatList,
   ScrollView,
+  ActivityIndicator,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,9 +42,9 @@ const styles = StyleSheet.create({
   },
   buttonCard: {
     backgroundColor: '#fafafa',
-    borderTopLeftRadius: 50,
+    // borderTopLeftRadius: 50,
     height: 700,
-    marginTop: 40,
+    marginTop: 20,
   },
   signInButton: {
     justifyContent: 'flex-end',
@@ -486,7 +488,7 @@ function Country({country}) {
   );
 }
 
-function SignupForm({navigation}) {
+function SignupForm({navigation, close}) {
   navigation.setOptions({
     headerStyle: {
       elevation: 0,
@@ -494,10 +496,21 @@ function SignupForm({navigation}) {
     },
   });
 
+  const [isLoading, setLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const ref = useRef(null);
 
+  const stopLoading = () => {
+    setTimeout(() => {
+      setLoading(isLoading);
+      setIsSuccess(!isSuccess);
+      close();
+      navigation.navigate('Showpage');
+    }, 2000);
+  };
 
   return (
-    <View style={{flex: 1, backgroundColor: '#c2c2c2'}}>
+    <View style={{flex: 1}}>
       <ScrollView>
         <View style={styles.buttonCard}>
           <View style={styles.signinCard}>
@@ -543,7 +556,12 @@ function SignupForm({navigation}) {
                 renderItem={({item}) => <Country id={item} country={item} />}
                 label="country"
               />
-              <TouchableOpacity>
+              {isSuccess == false && isLoading == false ? (
+              <TouchableOpacity
+                onPress={() => {
+                  setLoading(!isLoading);
+                  stopLoading();
+                }}>
                 <View style={styles.otpButton}>
                   <View style={{flex: 1, flexDirection: 'row'}}>
                     <Text
@@ -558,6 +576,18 @@ function SignupForm({navigation}) {
                   </View>
                 </View>
               </TouchableOpacity>
+            ) : (
+              <View
+                style={{flex: 1, flexDirection: 'row',margin:5,marginLeft:10}}>
+                  {isLoading == true ? 
+                <ActivityIndicator size="small" color="#ff297f" />
+                :
+                <View style={{marginTop:-10}}>
+                  <Icon name="check" color="#ff297f" size={30} />
+                  </View>
+                } 
+              </View>
+            )}
             </View>
           </View>
         </View>

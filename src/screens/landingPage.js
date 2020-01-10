@@ -1,4 +1,4 @@
-import React,{useRef} from 'react';
+import React,{useRef,useState} from 'react';
 import {
   SafeAreaView,
   View,
@@ -9,15 +9,23 @@ import {
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import SignIn from '../components/forms/SigninForm';
+import SignUp from '../components/forms/SignupForm';
 
 function LandingPage(props) {
     const ref = useRef(null)
+    const [isSignin,setSignin] = useState(false)
   return (
     <View>
-      <TouchableOpacity onPress={() => ref.current.open()}>
+      <TouchableOpacity onPress={() => {
+        ref.current.open()
+        setSignin(true)
+        }}>
         <Text>Signin</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => ref.current.open()}>
+      <TouchableOpacity onPress={() => {
+        ref.current.open()
+        setSignin(false)
+        }}>
         <Text>Signup</Text>
       </TouchableOpacity>
 
@@ -32,7 +40,11 @@ function LandingPage(props) {
             borderTopRightRadius: 30,
           },
         }}>
+          {isSignin ? 
         <SignIn close={()=>{ref.current.close()}} {...props}/>
+      :
+      <SignUp close={()=>{ref.current.close()}} {...props}/>
+      }
       </RBSheet>  
     </View>
   );
