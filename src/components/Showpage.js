@@ -1,5 +1,5 @@
 import React,{useRef} from 'react';
-import {Image, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Image, View, StyleSheet, Text, TouchableOpacity,ScrollView} from 'react-native';
 import {Rating, AirbnbRating} from 'react-native-ratings';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -55,6 +55,7 @@ function Showpage({navigation}) {
   const ref = useRef(null)
   return (
     <View style={{flex: 1, backgroundColor: 'white', marginTop: -58}}>
+      <ScrollView>
       <View style={{flex: 2}}>
         <View style={styles.container}>
           <Image
@@ -92,6 +93,7 @@ function Showpage({navigation}) {
             ever since the 1500s, when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
           </Text>
+          
           <AirbnbRating
             showRating={true}
             count={5}
@@ -110,6 +112,7 @@ function Showpage({navigation}) {
           /> */}
         </View>
       </View>
+      </ScrollView>
       <TouchableOpacity>
         <View
           style={{
