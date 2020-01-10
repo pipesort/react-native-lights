@@ -1,10 +1,11 @@
-import React,{useRef,useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   SafeAreaView,
   View,
   FlatList,
   StyleSheet,
   Text,
+  Button,
   TouchableOpacity,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -12,23 +13,35 @@ import SignIn from '../components/forms/SigninForm';
 import SignUp from '../components/forms/SignupForm';
 
 function LandingPage(props) {
-    const ref = useRef(null)
-    const [isSignin,setSignin] = useState(false)
+  const ref = useRef(null);
+  const [isSignin, setSignin] = useState(false);
   return (
-    <View>
-      <TouchableOpacity onPress={() => {
-        ref.current.open()
-        setSignin(true)
-        }}>
-        <Text>Signin</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => {
-        ref.current.open()
-        setSignin(false)
-        }}>
-        <Text>Signup</Text>
-      </TouchableOpacity>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <View style={{marginRight: 10}}>
+        <Button
+          onPress={() => {
+            ref.current.open();
+            setSignin(true);
+          }}
+          title="Sign in"
+        />
+      </View>
 
+      <View style={{marginRight: 10}}>
+        <Button
+          onPress={() => {
+            ref.current.open();
+            setSignin(false);
+          }}
+          title="Sign up"
+        />
+      </View>
       <RBSheet
         ref={ref}
         height={680}
@@ -40,12 +53,22 @@ function LandingPage(props) {
             borderTopRightRadius: 30,
           },
         }}>
-          {isSignin ? 
-        <SignIn close={()=>{ref.current.close()}} {...props}/>
-      :
-      <SignUp close={()=>{ref.current.close()}} {...props}/>
-      }
-      </RBSheet>  
+        {isSignin ? (
+          <SignIn
+            close={() => {
+              ref.current.close();
+            }}
+            {...props}
+          />
+        ) : (
+          <SignUp
+            close={() => {
+              ref.current.close();
+            }}
+            {...props}
+          />
+        )}
+      </RBSheet>
     </View>
   );
 }

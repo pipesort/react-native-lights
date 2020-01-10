@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import {
   SafeAreaView,
   Button,
@@ -12,17 +12,17 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import CardContent from '../screens/cardContent';
 
 function BottomSheet() {
-
+const ref = useRef(null)
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Button
         title="OPEN BOTTOM SHEET"
         onPress={() => {
-          this.panel.open();
+          ref.current.open();
         }}
       />
       <RBSheet
-        ref={c => (this.panel = c)}
+        ref={ref}
         height={300}
         duration={300}
         closeOnDragDown={true}

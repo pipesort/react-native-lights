@@ -8,7 +8,7 @@ import {
   Text,
   Button,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -17,33 +17,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
-  },
-  cardOneContent: {
-    // width: 450,
-    height: 300,
-    flexDirection: 'column',
-    backgroundColor: '#000000',
-    margin: 10,
-    borderRadius: 20,
-    padding: 16,
-  },
-  cardTwoContent: {
-    // width: 250,
-    height: 300,
-    flexDirection: 'column',
-    backgroundColor: '#2675fc',
-    margin: 10,
-    borderRadius: 20,
-    padding: 16,
-  },
-  cardThreeContent: {
-    // width: 250,
-    height: 300,
-    flexDirection: 'column',
-    backgroundColor: '#854e4e',
-    margin: 10,
-    borderRadius: 20,
-    padding: 16,
   },
   button: {
     width: 150,
@@ -56,96 +29,110 @@ const styles = StyleSheet.create({
     padding: 8,
     justifyContent: 'flex-end',
   },
-  buttonText: {
-    color: 'white', 
-    textAlign: 'center', 
-    marginBottom: 8
+  buttonTextStyle: {
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: 8,
   },
 });
 
-function ColoredCards({navigation}) {
+function ColoredCard({
+  title,
+  description,
+  buttonText,
+  cardBackground,
+  cardHeight,
+  cardFlexDirection,
+  cardMargin,
+  cardBorderRadius,
+  cardPadding,
+}) {
+
+
+
+  const cardStyle = StyleSheet.create({
+    cardColor: {
+      backgroundColor: cardBackground,
+      height: cardHeight,
+      flexDirection: cardFlexDirection,
+      margin: cardMargin,
+      borderRadius: cardBorderRadius,
+      padding: cardPadding,
+    },
+  });
+
+  return (
+    <View style={cardStyle.cardColor}>
+      <Text
+        style={{
+          color: 'white',
+          fontSize: 28,
+          fontWeight: 'bold',
+          marginTop: 15,
+        }}>
+        {title}
+      </Text>
+      <Text style={{color: 'white', fontSize: 16}}>{description}</Text>
+      {buttonText ? (
+        <TouchableOpacity>
+          <View style={styles.button}>
+            <Text style={styles.buttonTextStyle}>{buttonText}</Text>
+          </View>
+        </TouchableOpacity>
+      ) : null}
+    </View>
+  );
+}
+
+function ColorfulCards({navigation}) {
   return (
     <ScrollView>
       <View style={styles.card}>
-
-        <View style={styles.cardOneContent}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: 28,
-              fontWeight: 'bold',
-              marginTop: 15,
-            }}>
-            card1
-          </Text>
-          <Text style={{color: 'white', fontSize: 16}}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </Text>
-          <TouchableOpacity>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Get started</Text>
-          </View>
-          </TouchableOpacity>
-        </View>
-      
-        
-        <View style={styles.cardTwoContent}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: 28,
-              fontWeight: 'bold',
-              marginTop: 15,
-            }}>
-            card2
-          </Text>
-          <Text style={{color: 'white', fontSize: 16}}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </Text>
-          <TouchableOpacity>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>
-              Get started
-            </Text>
-          </View>
-          </TouchableOpacity>
-        </View>
-        
-       
-        <View style={styles.cardThreeContent}>
-          <Text
-            style={{
-              color: 'white',
-              fontSize: 28,
-              fontWeight: 'bold',
-              marginTop: 15,
-            }}>
-            card3
-          </Text>
-          <Text style={{color: 'white', fontSize: 16}}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </Text>
-          <TouchableOpacity>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>
-              Get started
-            </Text>
-          </View>
-          </TouchableOpacity>
-        </View>
-        
+        <ColoredCard
+          title="card1"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book."
+          buttonText="Get Started"
+          cardBackground="#000000"
+          cardHeight={300}
+          cardFlexDirection="column"
+          cardMargin={10}
+          cardBorderRadius={20}
+          cardPadding={16}
+        />
+        <ColoredCard
+          title="card2"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book."
+          buttonText="Get Started"
+          cardBackground="#2675fc"
+          cardHeight={300}
+          cardFlexDirection="column"
+          cardMargin={10}
+          cardBorderRadius={20}
+          cardPadding={16}
+        />
+        <ColoredCard
+          title="card3"
+          description="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book."
+          buttonText="Get Started"
+          cardBackground="#854e4e"
+          cardHeight={300}
+          cardFlexDirection="column"
+          cardMargin={10}
+          cardBorderRadius={20}
+          cardPadding={16}
+        />
       </View>
     </ScrollView>
   );
 }
 
-export default ColoredCards;
+export default ColorfulCards;
