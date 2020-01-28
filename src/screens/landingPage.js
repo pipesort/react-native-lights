@@ -9,8 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import SignIn from '../components/forms/SigninForm';
-import SignUp from '../components/forms/SignupForm';
+import {SignInForm as SignIn, SignUpForm as SignUp} from '../forms';
 
 function LandingPage(props) {
   const ref = useRef(null);

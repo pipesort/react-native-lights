@@ -1,7 +1,7 @@
-import React,{useRef} from 'react';
+import React, {useRef} from 'react';
 import {
   SafeAreaView,
-  Button,
+  // Button,
   View,
   FlatList,
   StyleSheet,
@@ -11,16 +11,21 @@ import Carousel from 'react-native-snap-carousel';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import CardContent from '../screens/cardContent';
 
+import Button from '../Button/Button';
+
 function BottomSheet() {
-const ref = useRef(null)
+  const ref = useRef(null);
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Button
-        title="OPEN BOTTOM SHEET"
+        color="secondary"
+        size="medium"
+        appearance="bordered"
         onPress={() => {
           ref.current.open();
-        }}
-      />
+        }}>
+        OPEN BOTTOM SHEET
+      </Button>
       <RBSheet
         ref={ref}
         height={300}
@@ -30,8 +35,8 @@ const ref = useRef(null)
           container: {
             justifyContent: 'center',
             alignItems: 'center',
-            borderTopLeftRadius:30,
-            borderTopRightRadius:30,
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
             // backgroundColor:'#3271a8'
           },
         }}>

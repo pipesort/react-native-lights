@@ -1,4 +1,4 @@
-import React, {useState,useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   StyleSheet,
@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import Input from '../../Input/Input';
 
 const styles = StyleSheet.create({
   container: {
@@ -58,7 +60,6 @@ const styles = StyleSheet.create({
 });
 
 function SigninForm({navigation, close}) {
-
   const [isLoading, setLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const ref = useRef(null);
@@ -67,7 +68,7 @@ function SigninForm({navigation, close}) {
     setTimeout(() => {
       setLoading(isLoading);
       setIsSuccess(!isSuccess);
-      ref.current.close()
+      ref.current.close();
       close();
       navigation.navigate('Showpage');
     }, 2000);
@@ -94,13 +95,20 @@ function SigninForm({navigation, close}) {
             please enter registered mobile number
           </Text>
           <View>
-            <TextInput
+            <Input
               placeholder="9999999999"
               placeholderTextColor="#7d7d7d"
-              style={{fontSize: 30, fontWeight: 'bold'}}
               autoFocus={true}
               maxLength={10}
               keyboardType={'numeric'}
+              leftInputIcon={
+                <Icon
+                  name="face"
+                  size={25}
+                  // color="white"
+                  style={{marginRight: 15}}
+                />
+              }
             />
           </View>
         </View>
@@ -111,7 +119,7 @@ function SigninForm({navigation, close}) {
         </Text>
         <TouchableOpacity
           onPress={() => {
-            ref.current.open()
+            ref.current.open();
           }}>
           <View style={styles.signInButton}>
             <View style={{flex: 1, flexDirection: 'row'}}>
@@ -193,14 +201,19 @@ function SigninForm({navigation, close}) {
               </TouchableOpacity>
             ) : (
               <View
-                style={{flex: 1, flexDirection: 'row',margin:5,marginLeft:10}}>
-                  {isLoading == true ? 
-                <ActivityIndicator size="small" color="#ff297f" />
-                :
-                <View style={{marginTop:-10}}>
-                  <Icon name="check" color="#ff297f" size={30} />
+                style={{
+                  flex: 1,
+                  flexDirection: 'row',
+                  margin: 5,
+                  marginLeft: 10,
+                }}>
+                {isLoading == true ? (
+                  <ActivityIndicator size="small" color="#ff297f" />
+                ) : (
+                  <View style={{marginTop: -10}}>
+                    <Icon name="check" color="#ff297f" size={30} />
                   </View>
-                } 
+                )}
               </View>
             )}
           </View>

@@ -408,12 +408,7 @@ function TextBox({placeholder, label}) {
   );
 }
 
-function SelectBox({
-  placeholder,
-  label,
-  renderItem,
-  data,
-}) {
+function SelectBox({placeholder, label, renderItem, data}) {
   const [value, setValue] = useState('');
   const ref = useRef(null);
   return (
@@ -450,7 +445,7 @@ function SelectBox({
                 <TouchableOpacity
                   onPress={() => {
                     setValue(item.item);
-                    ref.current.close()
+                    ref.current.close();
                   }}>
                   {renderItem(item)}
                 </TouchableOpacity>
@@ -534,12 +529,7 @@ function SignupForm({navigation, close}) {
                 placeholder="select city"
                 data={cities}
                 onSelect={item => item}
-                renderItem={({item}) => (
-                  <City
-                    id={item}
-                    city={item}
-                  />
-                )}
+                renderItem={({item}) => <City id={item} city={item} />}
                 label="city"
               />
               <SelectBox
@@ -557,37 +547,42 @@ function SignupForm({navigation, close}) {
                 label="country"
               />
               {isSuccess == false && isLoading == false ? (
-              <TouchableOpacity
-                onPress={() => {
-                  setLoading(!isLoading);
-                  stopLoading();
-                }}>
-                <View style={styles.otpButton}>
-                  <View style={{flex: 1, flexDirection: 'row'}}>
-                    <Text
-                      style={{
-                        color: 'white',
-                        marginTop: 12,
-                        marginLeft: 5,
-                        fontSize: 18,
-                      }}>
-                      Submit
-                    </Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    setLoading(!isLoading);
+                    stopLoading();
+                  }}>
+                  <View style={styles.otpButton}>
+                    <View style={{flex: 1, flexDirection: 'row'}}>
+                      <Text
+                        style={{
+                          color: 'white',
+                          marginTop: 12,
+                          marginLeft: 5,
+                          fontSize: 18,
+                        }}>
+                        Submit
+                      </Text>
+                    </View>
                   </View>
+                </TouchableOpacity>
+              ) : (
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    margin: 5,
+                    marginLeft: 10,
+                  }}>
+                  {isLoading == true ? (
+                    <ActivityIndicator size="small" color="#ff297f" />
+                  ) : (
+                    <View style={{marginTop: -10}}>
+                      <Icon name="check" color="#ff297f" size={30} />
+                    </View>
+                  )}
                 </View>
-              </TouchableOpacity>
-            ) : (
-              <View
-                style={{flex: 1, flexDirection: 'row',margin:5,marginLeft:10}}>
-                  {isLoading == true ? 
-                <ActivityIndicator size="small" color="#ff297f" />
-                :
-                <View style={{marginTop:-10}}>
-                  <Icon name="check" color="#ff297f" size={30} />
-                  </View>
-                } 
-              </View>
-            )}
+              )}
             </View>
           </View>
         </View>

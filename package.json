@@ -19,6 +19,7 @@
     "@react-navigation/native": "^5.0.0-alpha.22",
     "@react-navigation/stack": "^5.0.0-alpha.54",
     "native-base": "^2.13.8",
+    "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-insta-stories": "^2.0.2",
     "react-native": "0.61.5",
@@ -35,11 +36,15 @@
     "@babel/core": "^7.7.7",
     "@babel/runtime": "^7.7.7",
     "@react-native-community/eslint-config": "^0.0.6",
+    "@types/jest": "^24.9.1",
+    "@types/react-native": "^0.61.4",
+    "@types/react-test-renderer": "^16.9.2",
     "babel-jest": "^24.9.0",
     "eslint": "^6.8.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.57.0",
-    "react-test-renderer": "16.9.0"
+    "react-test-renderer": "16.9.0",
+    "typescript": "^3.7.5"
   },
   "jest": {
     "preset": "react-native"

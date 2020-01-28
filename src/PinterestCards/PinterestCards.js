@@ -9,11 +9,12 @@ import {
   Text,
 } from 'react-native';
 
+import {Card, CardHeader, CardContent, CardFooter} from '../Card';
+
 const styles = StyleSheet.create({
   MainContainer: {
     justifyContent: 'center',
     flex: 1,
-    paddingTop: 30,
     paddingBottom: 10,
   },
   cardStyle: {
@@ -23,7 +24,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#121111',
     color: 'white',
     borderRadius: 10,
-    marginBottom: 10,
     marginLeft: 5,
     marginRight: 5,
     fontSize: 16,
@@ -31,17 +31,10 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 14,
     textAlign: 'left',
-    marginLeft: 15,
-    marginRight: 15,
-    marginTop: -8,
     fontWeight: 'bold',
   },
   descriptionStyle: {
     fontSize: 12,
-    textAlign: 'left',
-    marginLeft: 15,
-    marginRight: 15,
-    marginBottom: 10,
   },
 });
 
@@ -78,33 +71,55 @@ const listData = [
   },
 ];
 
-function PinterestCard({data}){
-  return(
+function PinterestCard({data}) {
+  return (
     <FlatList
-    data={data}
-    renderItem={({item}) => (
-      <View style={{flex: 1, flexDirection: 'column', margin: 1}}>
-        <TouchableOpacity>
-          <Image style={styles.cardStyle} source={{uri: item.image}} />
-        </TouchableOpacity>
-        <Text style={styles.textStyle}>{item.title}</Text>
-        <Text style={styles.descriptionStyle}>{item.description}</Text>
-      </View>
-    )}
-    numColumns={2}
-    keyExtractor={(item, index) => index.toString()}
-  />
-  )
-}
+      data={data}
+      renderItem={({item}) => (
+        <Card
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            margin: 5,
+            marginBottom: -35,
+            backgroundColor: 'transparent',
+            elevation: 0,
+          }}>
+          <CardHeader image={{uri: item.image}} imageStyle={styles.cardStyle} />
+          <CardContent>
+            <Text style={styles.textStyle}>{item.title}</Text>
+            <Text style={styles.descriptionStyle}>{item.description}</Text>
+          </CardContent>
+        </Card>
+      )}
+      numColumns={2}
+      keyExtractor={(item, index) => index.toString()}
+    />
+  );
 
+  // return (
+  //   <FlatList
+  //     data={data}
+  //     renderItem={({item}) => (
+  //       <View style={{flex: 1, flexDirection: 'column', margin: 1}}>
+  //         <TouchableOpacity>
+  //           <Image style={styles.cardStyle} source={{uri: item.image}} />
+  //         </TouchableOpacity>
+  //         <Text style={styles.textStyle}>{item.title}</Text>
+  //         <Text style={styles.descriptionStyle}>{item.description}</Text>
+  //       </View>
+  //     )}
+  //     numColumns={2}
+  //     keyExtractor={(item, index) => index.toString()}
+  //   />
+  // );
+}
 
 function PinterestCards() {
   return (
-    <>
-      <View style={styles.MainContainer}>
-       <PinterestCard data={listData}/>
-      </View>
-    </>
+    <View style={styles.MainContainer}>
+      <PinterestCard data={listData} />
+    </View>
   );
 }
 

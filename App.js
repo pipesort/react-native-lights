@@ -1,17 +1,17 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationNativeContainer} from '@react-navigation/native';
+
 import Homepage from './src/screens/Homepage';
-import BottomSheet from './src/components/BottomSheet';
-import ColoredCards from './src/components/ColoredCards';
-import PinterestCards from './src/components/PinterestCards';
-import CardSlider from './src/components/CardSlider';
-import Showpage from './src/components/Showpage';
-import BottomSheetCards from './src/components/BottomSheetCards';
-import SigninForm from './src/components/forms/SigninForm';
-import SignupForm from './src/components/forms/SignupForm';
+import BottomSheet from './src/BottomSheet/BottomSheet';
+import ColoredCards from './src/ColoredCards/ColoredCards';
+import PinterestCards from './src/PinterestCards/PinterestCards';
+import CardSlider from './src/CardSlider/CardSlider';
+import Showpage from './src/Showpage';
+import BottomSheetCards from './src/BottomSheetCards/BottomSheetCards';
+import {SignInForm, SignUpForm} from './src/forms';
 import {createStackNavigator} from '@react-navigation/stack';
-import Otp from './src/components/Otp';
+import Otp from './src/Otp';
 import LandingPage from './src/screens/landingPage';
 
 const Stack = createStackNavigator();
@@ -25,15 +25,14 @@ const App = () => {
         <Stack.Screen name="ColoredCards" component={ColoredCards} />
         <Stack.Screen name="PinterestCards" component={PinterestCards} />
         <Stack.Screen name="CardSlider" component={CardSlider} />
-       
-       
+
         <Stack.Screen
-          name="SignupForm"
+          name="SignUpForm"
           options={{
             title: '',
           }}
           options={{headerShown: false}}
-          component={SignupForm}
+          component={SignUpForm}
         />
         <Stack.Screen
           name="Otp"
@@ -51,13 +50,13 @@ const App = () => {
           options={{headerShown: false}}
           component={LandingPage}
         />
-         <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
+        <Stack.Screen name="BottomSheetCards" component={BottomSheetCards} />
         <Stack.Screen
-          name="SigninForm"
+          name="SignInForm"
           options={{headerShown: false}}
-          component={SigninForm}
+          component={SignInForm}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Showpage"
           options={{
             title: '',
