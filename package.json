@@ -1,36 +1,28 @@
 {
-  "name": "UItrends",
-  "version": "0.0.1",
-  "private": true,
-  "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
-  },
+  "name": "react-native-pipesort-component",
+  "version": "1.0.6",
+  "description": "A modernised UI kit for mobile apps.",
+  "main": "index.js",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "yarn add react-native-pipesort-component"
   },
-  "dependencies": {
-    "@react-native-community/masked-view": "^0.1.5",
-    "@react-navigation/native": "^5.0.0-alpha.22",
-    "@react-navigation/stack": "^5.0.0-alpha.54",
-    "native-base": "^2.13.8",
-    "prop-types": "^15.7.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipesort/native-components.git"
+  },
+  "keywords": [
+    "input",
+    "text-input"
+  ],
+  "author": "Pipesort Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pipesort/native-components/issues"
+  },
+  "homepage": "https://github.com/pipesort/native-components#readme",
+  "peerDependencies": {
     "react": "16.9.0",
-    "react-insta-stories": "^2.0.2",
-    "react-native": "0.61.5",
-    "react-native-elements": "^1.2.7",
-    "react-native-gesture-handler": "^1.5.3",
-    "react-native-ratings": "^6.5.0",
-    "react-native-raw-bottom-sheet": "^2.0.6",
-    "react-native-safe-area-context": "^0.6.2",
-    "react-native-screens": "^2.0.0-alpha.22",
-    "react-native-snap-carousel": "^3.8.4",
-    "react-native-vector-icons": "^6.6.0"
+    "react-native": "0.61.5"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -45,8 +37,6 @@
     "metro-react-native-babel-preset": "^0.57.0",
     "react-test-renderer": "16.9.0",
     "typescript": "^3.7.5"
-  },
-  "jest": {
-    "preset": "react-native"
   }
+
 }
