@@ -1,4 +1,4 @@
-import ColoredCard from './src/ColoredCards'
+import ColoredCard from './ColoredCards'
+import TextInput from './TextInput'
 
-
-export {ColoredCard}
+export {ColoredCard,TextInput}
