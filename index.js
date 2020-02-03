@@ -3,5 +3,5 @@ import TextInput from './TextInput'
 import CardSlider from './CardSlider'
 import BottomSheet from './BottomSheet'
 import SelectBox from './SelectBox'
-
-export {ColoredCard,TextInput,CardSlider,BottomSheet,SelectBox}
+import PinterestCards from './PinterestCards'
+export {ColoredCard,TextInput,CardSlider,BottomSheet,SelectBox,PinterestCards}
