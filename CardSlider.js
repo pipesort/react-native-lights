@@ -7,47 +7,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-
-
-const listData = [
-  {
-    title: 'card1',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/UYiroysl.jpg',
-    buttonTitle: 'Get Started',
-  },
-  {
-    title: 'card2',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/UPrs1EWl.jpg',
-    buttonTitle: 'Get Started',
-  },
-  {
-    title: 'card3',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/MABUbpDl.jpg',
-    buttonTitle: 'Get Started',
-  },
-  {
-    title: 'card4',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/KZsmUi2l.jpg',
-    buttonTitle: 'Get Started',
-  },
-  {
-    title: 'card5',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/2nCt3Sbl.jpg',
-    buttonTitle: 'Get Started',
-  },
-  {
-    title: 'card6',
-    description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    image: 'https://i.imgur.com/lceHsT6l.jpg',
-    buttonTitle: 'Get Started',
-  },
-];
-
 function SlidingCards({
   data,
   cardBackground,
@@ -104,8 +63,8 @@ function SlidingCards({
 
   return (
     <ScrollView horizontal>
-      {data.map(cardData => (
-        <View style={card.cardStyle}>
+      {data.map((cardData, index) => (
+        <View style={card.cardStyle} key={index}>
           <Text style={card.cardTextStyle}>{cardData.title}</Text>
           <Text style={{color: 'white', fontSize: 14}}>
             {cardData.description}
@@ -126,11 +85,11 @@ function SlidingCards({
   );
 }
 
-function CardSlider() {
+function CardSlider({data}) {
   return (
     <>
       <SlidingCards
-        data={listData}
+        data={data}
         cardWidth={150}
         cardHeight={180}
         cardFlexDirection="column"
