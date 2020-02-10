@@ -66,9 +66,11 @@ function SlidingCards({
       {data.map((cardData, index) => (
         <View style={card.cardStyle} key={index}>
           <Text style={card.cardTextStyle}>{cardData.title}</Text>
+          <ScrollView>
           <Text style={{color: 'white', fontSize: 14}}>
             {cardData.description}
           </Text>
+          </ScrollView>
           {cardData.buttonTitle ? (
             <TouchableOpacity>
               <View style={card.button}>
