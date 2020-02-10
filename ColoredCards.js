@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import ColoredCard from "./ColoredCard"
+import ColoredCard from './ColoredCard';
 
 const styles = StyleSheet.create({
   card: {
@@ -40,41 +40,46 @@ const styles = StyleSheet.create({
 
 function ColorfulCards({data}) {
   return (
-      <View style={styles.card}>
-        {
-          data && data.map((item, index)=>(
-            <ColoredCard
-              key={index}
-              title={item.title}
-              description={item.description}
-              buttonTitle={item.buttonTitle}
-              cardBackground={item.backgroundColor}
-              cardHeight={300}
-              cardFlexDirection="column"
-              cardMargin={10}
-              cardBorderRadius={20}
-              cardPadding={16}
-              primaryTextColor="white"
-              primaryTextSize={28}
-              primaryTextWeight="bold"
-              primaryTextTop={15}
-              secondaryTextColor="white"
-              secondaryTextSize={16}
-              buttonWidth={150}
-              buttonHeight={50}
-              buttonTop={20}
-              buttonBackground="#05ada5"
-              buttonBorderRadius={12}
-              buttonPadding={8}
-              buttonTextColor="white"
-              buttonTextAlign="center"
-              buttonTextBottom={8}
-              buttonTextSize={14}
-              buttonTextTop={8}
-            />
-          ))
-        }
-      </View>
+    <View style={styles.card}>
+      {/* {
+          data && data.map((item, index)=>( */}
+      <FlatList
+        data={data}
+        renderItem={({item, index}) => (
+          <ColoredCard
+            key={index}
+            title={item.title}
+            description={item.description}
+            buttonTitle={item.buttonTitle}
+            cardBackground={item.backgroundColor}
+            cardHeight={300}
+            cardFlexDirection="column"
+            cardMargin={10}
+            cardBorderRadius={20}
+            cardPadding={16}
+            primaryTextColor="white"
+            primaryTextSize={28}
+            primaryTextWeight="bold"
+            primaryTextTop={15}
+            secondaryTextColor="white"
+            secondaryTextSize={16}
+            buttonWidth={150}
+            buttonHeight={50}
+            buttonTop={20}
+            buttonBackground="#05ada5"
+            buttonBorderRadius={12}
+            buttonPadding={8}
+            buttonTextColor="white"
+            buttonTextAlign="center"
+            buttonTextBottom={8}
+            buttonTextSize={14}
+            buttonTextTop={8}
+          />
+        )}
+      />
+      {/* ))
+        } */}
+    </View>
   );
 }
 
