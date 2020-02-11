@@ -5,7 +5,8 @@ import {
   Text,
   Button,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  ScrollView
 } from 'react-native';
 
 function ColoredCard({
@@ -79,7 +80,9 @@ function ColoredCard({
         style={card.cardPrimaryText}>
         {title}
       </Text>
+      <ScrollView>
       <Text style={card.cardSecondaryText}>{description}</Text>
+      </ScrollView>
       {buttonTitle ? (
         <TouchableOpacity>
           <View style={card.button}>
