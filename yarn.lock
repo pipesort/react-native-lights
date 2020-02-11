@@ -3606,6 +3606,11 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
+react-native-pipesort-component@^1.0.46:
+  version "1.0.46"
+  resolved "https://registry.yarnpkg.com/react-native-pipesort-component/-/react-native-pipesort-component-1.0.46.tgz#1232254875ed16b94a1d29368d79ae39e53e1a37"
+  integrity sha512-xdeU38/3CyUQM8Nfy7sTyJgjgn6wVVrCKwsW0YAc1KGaelai8wPIROCUYXmZ9fynBszEJNMN7c7wGt6Sv2FzRw==
+
 react-refresh@^0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.4.2.tgz#54a277a6caaac2803d88f1d6f13c1dcfbd81e334"
