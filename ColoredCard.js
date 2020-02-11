@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ScrollView,
-  Button,
 } from 'react-native';
 
 function ColoredCard({
