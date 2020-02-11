@@ -18,17 +18,22 @@ function SelectBox({placeholder, label, renderItem, data}) {
   return (
     <>
       <View>
+     
         <Text style={{color: '#787878', fontSize: 14}}>{label}</Text>
-
+      
         <View style={{marginLeft: -3}}>
+         
           <TextInput
             placeholder={placeholder}
             placeholderTextColor="#c4c4c4"
             style={{fontSize: 18, fontWeight: 'bold'}}
             onFocus={() => ref.current.open()}
+            onTouchStart={() => ref.current.open()}
             value={value}
           />
+        
         </View>
+        
       </View>
       <RBSheet
         ref={ref}
