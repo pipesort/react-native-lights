@@ -51,6 +51,7 @@ function ColorfulCards({data}) {
             title={item.title}
             description={item.description}
             buttonTitle={item.buttonTitle}
+            buttonFunction={item.buttonFunction}
             cardBackground={item.backgroundColor}
             cardHeight={300}
             cardFlexDirection="column"

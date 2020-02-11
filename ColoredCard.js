@@ -6,7 +6,7 @@ import {
   Button,
   TouchableOpacity,
   StyleSheet,
-  ScrollView
+  ScrollView,
 } from 'react-native';
 
 function ColoredCard({
@@ -35,7 +35,8 @@ function ColoredCard({
   buttonTextAlign,
   buttonTextBottom,
   buttonTextSize,
-  buttonTextTop
+  buttonTextTop,
+  buttonFunction,
 }) {
   const card = StyleSheet.create({
     cardColor: {
@@ -69,24 +70,32 @@ function ColoredCard({
       textAlign: buttonTextAlign,
       fontSize: buttonTextSize,
       marginTop: buttonTextTop,
-      marginBottom:buttonTextBottom,
-      fontSize:buttonTextSize
+      marginBottom: buttonTextBottom,
+      fontSize: buttonTextSize,
     },
   });
 
+  
+
+  let buttonComponent = (<Text style={card.buttonTitleStyle}>{buttonTitle}</Text>)
+
+  if(buttonFunction){
+
+    buttonComponent = ( <Text style={card.buttonTitleStyle} onPress={buttonFunction}>{buttonTitle}</Text> )
+  }
+
+
+
   return (
     <View style={card.cardColor}>
-      <Text
-        style={card.cardPrimaryText}>
-        {title}
-      </Text>
+      <Text style={card.cardPrimaryText}>{title}</Text>
       <ScrollView>
-      <Text style={card.cardSecondaryText}>{description}</Text>
+        <Text style={card.cardSecondaryText}>{description}</Text>
       </ScrollView>
       {buttonTitle ? (
         <TouchableOpacity>
           <View style={card.button}>
-            <Text style={card.buttonTitleStyle}>{buttonTitle}</Text>
+           {buttonComponent} 
           </View>
         </TouchableOpacity>
       ) : null}
