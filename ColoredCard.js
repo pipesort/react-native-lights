@@ -87,6 +87,10 @@ function ColoredCard({
         {buttonTitle}
       </Text>
     );
+    buttonComponent = ( 
+    <TouchableOpacity onPress={buttonFunction}>
+        <Text style={card.buttonTitleStyle} >{buttonTitle}</Text> 
+    </TouchableOpacity>)
   }
 
   return (
