@@ -49,7 +49,7 @@ function SlidingCards({data}) {
             {cardData.description}
           </Text>
           {cardData.buttonTitle ? (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={cardData.buttonFunction ? cardData.buttonFunction : null}>
               <View
                 style={{
                   width: cardData.buttonWidth ? cardData.buttonWidth : '70%',
