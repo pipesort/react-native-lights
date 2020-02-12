@@ -29,7 +29,7 @@ function SlidingCards({
   buttonBackground,
   buttonBorderRadius,
   buttonPadding,
-  buttonFunction
+  buttonFunction,
 }) {
   const card = StyleSheet.create({
     cardStyle: {
@@ -54,45 +54,40 @@ function SlidingCards({
       borderRadius: buttonBorderRadius,
       padding: buttonPadding,
     },
-    buttonTitleStyle:{
+    buttonTitleStyle: {
       color: buttonTextColor,
       textAlign: buttonTextAlign,
       fontSize: buttonTextSize,
       marginTop: buttonTextTop,
-    }
+    },
   });
 
-  
   return (
     <ScrollView horizontal>
       {data.map((cardData, index) => (
         <View style={card.cardStyle} key={index}>
           <Text style={card.cardTextStyle}>{cardData.title}</Text>
           <ScrollView>
-          <Text style={{color: 'white', fontSize: 14}}>
-            {cardData.description}
-          </Text>
+            <Text style={{color: 'white', fontSize: 14}}>
+              {cardData.description}
+            </Text>
           </ScrollView>
           {cardData.buttonTitle ? (
             <TouchableOpacity>
-    <View style={card.button}>
-
-    {
-                cardData.buttonFunction ?
-                (<Text
-                    style={card.buttonTitleStyle}>
+              <View style={card.button}>
+                {cardData.buttonFunction ? (
+                  <Text style={card.buttonTitleStyle}>
                     {cardData.buttonTitle}
-                  </Text>) : (
-                      <TouchableOpacity onPress={buttonFunction}>
-                          <Text
-                style={card.buttonTitleStyle}>
-                {cardData.buttonTitle}
-              </Text>
-                      </TouchableOpacity>
-                  )
-                }
-    </View>
-  </TouchableOpacity>
+                  </Text>
+                ) : (
+                  <TouchableOpacity onPress={buttonFunction}>
+                    <Text style={card.buttonTitleStyle}>
+                      {cardData.buttonTitle}
+                    </Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+            </TouchableOpacity>
           ) : null}
         </View>
       ))}
@@ -115,16 +110,16 @@ function CardSlider({data}) {
         TextColor="white"
         TextSize={20}
         TextWeight="bold"
-        buttonTextColor= 'white'
-        buttonTextAlign= 'center'
-        buttonTextSize= {12}
-        buttonTextTop= {7}
-        buttonWidth= '70%'
-        buttonHeight= {40}
-        buttonTop= {14}
-        buttonBackground= '#05ada5'
-        buttonBorderRadius= {10}
-        buttonPadding= {4}
+        buttonTextColor="white"
+        buttonTextAlign="center"
+        buttonTextSize={12}
+        buttonTextTop={7}
+        buttonWidth="70%"
+        buttonHeight={40}
+        buttonTop={14}
+        buttonBackground="#05ada5"
+        buttonBorderRadius={10}
+        buttonPadding={4}
       />
     </>
   );
