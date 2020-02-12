@@ -53,7 +53,8 @@ function ColorfulCards({data}) {
             buttonTitle={item.buttonTitle}
             buttonFunction={item.buttonFunction}
             cardBackground={item.backgroundColor}
-            cardHeight={300}
+            cardHeight={item.cardHeight ? item.cardHeight : 300}
+            cardWidth={item.cardWidth ? item.cardWidth : null}
             cardFlexDirection="column"
             cardMargin={10}
             cardBorderRadius={20}

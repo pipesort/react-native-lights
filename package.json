@@ -1,6 +1,6 @@
 {
   "name": "react-native-pipesort-component",
-  "version": "1.0.80",
+  "version": "1.0.99",
   "description": "A modernised UI kit for mobile apps.",
   "main": "index.js",
   "scripts": {
@@ -44,6 +44,8 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.5",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-raw-bottom-sheet": "^2.0.6"
   }
