@@ -86,10 +86,34 @@ function PinterestCard({data}) {
             backgroundColor: 'transparent',
             elevation: 0,
           }}>
-          <CardHeader image={{uri: item.image}} imageStyle={styles.cardStyle} />
+          <CardHeader
+            image={{uri: item.image}}
+            imageStyle={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: item.imageHeight ? item.imageHeight : 200,
+              backgroundColor: item.cardBackgroundColor
+                ? item.cardBackgroundColor
+                : '#121111',
+              color: item.color ? item.color : 'white',
+              borderRadius: item.borderRadius ? item.borderRadius : 10,
+              marginLeft: 5,
+              marginRight: 5,
+              // fontSize: item.fontSize ? item.fontSize :16,
+            }}
+          />
           <CardContent>
-            <Text style={styles.textStyle}>{item.title}</Text>
-            <Text style={styles.descriptionStyle}>{item.description}</Text>
+            <Text
+              style={{
+                fontSize: item.primaryTextSize ? item.primaryTextSize : 14,
+                textAlign: item.primaryTextAlign ? item.primaryTextAlign : 'left',
+                fontWeight: 'bold',
+              }}>
+              {item.title}
+            </Text>
+            <Text style={{fontSize: item.secondaryTextSize ? item.secondaryTextSize : 12}}>
+              {item.description}
+            </Text>
           </CardContent>
         </Card>
       )}

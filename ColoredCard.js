@@ -15,6 +15,7 @@ function ColoredCard({
   buttonTitle,
   cardBackground,
   cardHeight,
+  cardWidth,
   cardFlexDirection,
   cardMargin,
   cardBorderRadius,
@@ -42,10 +43,11 @@ function ColoredCard({
     cardColor: {
       backgroundColor: cardBackground,
       height: cardHeight,
+      width: cardWidth,
       flexDirection: cardFlexDirection,
       margin: cardMargin,
       borderRadius: cardBorderRadius,
-      padding: cardPadding,
+      padding: cardPadding      
     },
     cardPrimaryText: {
       color: primaryTextColor,
@@ -75,19 +77,21 @@ function ColoredCard({
     },
   });
 
-  
+  let buttonComponent = (
+    <Text style={card.buttonTitleStyle}>{buttonTitle}</Text>
+  );
 
-  let buttonComponent = (<Text style={card.buttonTitleStyle}>{buttonTitle}</Text>)
-
-  if(buttonFunction){
-
+  if (buttonFunction) {
+    buttonComponent = (
+      <Text style={card.buttonTitleStyle} onPress={buttonFunction}>
+        {buttonTitle}
+      </Text>
+    );
     buttonComponent = ( 
     <TouchableOpacity onPress={buttonFunction}>
         <Text style={card.buttonTitleStyle} >{buttonTitle}</Text> 
     </TouchableOpacity>)
   }
-
-
 
   return (
     <View style={card.cardColor}>
@@ -97,9 +101,7 @@ function ColoredCard({
       </ScrollView>
       {buttonTitle ? (
         <TouchableOpacity>
-          <View style={card.button}>
-           {buttonComponent} 
-          </View>
+          <View style={card.button}>{buttonComponent}</View>
         </TouchableOpacity>
       ) : null}
     </View>
