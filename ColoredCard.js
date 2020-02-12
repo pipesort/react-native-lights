@@ -81,7 +81,10 @@ function ColoredCard({
 
   if(buttonFunction){
 
-    buttonComponent = ( <Text style={card.buttonTitleStyle} onPress={buttonFunction}>{buttonTitle}</Text> )
+    buttonComponent = ( 
+    <TouchableOpacity onPress={buttonFunction}>
+        <Text style={card.buttonTitleStyle} >{buttonTitle}</Text> 
+    </TouchableOpacity>)
   }
 
 

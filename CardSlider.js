@@ -28,7 +28,8 @@ function SlidingCards({
   buttonTop,
   buttonBackground,
   buttonBorderRadius,
-  buttonPadding
+  buttonPadding,
+  buttonFunction
 }) {
   const card = StyleSheet.create({
     cardStyle: {
@@ -61,6 +62,7 @@ function SlidingCards({
     }
   });
 
+  
   return (
     <ScrollView horizontal>
       {data.map((cardData, index) => (
@@ -73,13 +75,24 @@ function SlidingCards({
           </ScrollView>
           {cardData.buttonTitle ? (
             <TouchableOpacity>
-              <View style={card.button}>
-                <Text
-                  style={card.buttonTitleStyle}>
-                  {cardData.buttonTitle}
-                </Text>
-              </View>
-            </TouchableOpacity>
+    <View style={card.button}>
+
+    {
+                cardData.buttonFunction ?
+                (<Text
+                    style={card.buttonTitleStyle}>
+                    {cardData.buttonTitle}
+                  </Text>) : (
+                      <TouchableOpacity onPress={buttonFunction}>
+                          <Text
+                style={card.buttonTitleStyle}>
+                {cardData.buttonTitle}
+              </Text>
+                      </TouchableOpacity>
+                  )
+                }
+    </View>
+  </TouchableOpacity>
           ) : null}
         </View>
       ))}
