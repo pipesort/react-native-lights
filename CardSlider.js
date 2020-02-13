@@ -67,8 +67,9 @@ function SlidingCards({data}) {
                         color: cardData.secondaryTextColor
                           ? cardData.secondaryTextColor
                           : '#777',
-                        paddingTop: 5,
-                        paddingBottom: 1,
+                        margin:cardData.secondaryTextMargin
+                        ? cardData.secondaryTextMargin
+                        : 5
                       }}>
                       {cardData.description}
                     </Text>
