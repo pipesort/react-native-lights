@@ -37,17 +37,19 @@ function SlidingCards({data}) {
             }}>
             {cardData.title}
           </Text>
+          <ScrollView>
           <Text
             style={{
               color: cardData.secondaryTextColor
                 ? cardData.secondaryTextColor
                 : 'white',
-              fontSize: cardData.secondaryTextColor
-                ? cardData.secondaryTextColor
+              fontSize: cardData.secondaryTextSize
+                ? cardData.secondaryTextSize
                 : 14,
             }}>
             {cardData.description}
           </Text>
+          </ScrollView>
           {cardData.buttonTitle ? (
             <TouchableOpacity onPress={cardData.buttonFunction ? cardData.buttonFunction : null}>
               <View
