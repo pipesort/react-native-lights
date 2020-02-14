@@ -82,7 +82,7 @@ function PinterestCard({data}) {
             flexDirection: 'column',
             margin: 5,
             // marginBottom: -25,
-            marginTop: -10,
+            marginTop: -30,
             backgroundColor: 'transparent',
             elevation: 0,
           }}>
@@ -109,11 +109,15 @@ function PinterestCard({data}) {
               style={{
                 fontSize: item.primaryTextSize ? item.primaryTextSize : 14,
                 textAlign: item.primaryTextAlign ? item.primaryTextAlign : 'left',
+                color: item.primaryTextColor ? item.primaryTextColor : 'black',
                 fontWeight: 'bold',
               }}>
               {item.title}
             </Text>
-            <Text style={{fontSize: item.secondaryTextSize ? item.secondaryTextSize : 12}}>
+            <Text style={{
+              fontSize: item.secondaryTextSize ? item.secondaryTextSize : 12,
+              color: item.secondaryTextColor ? item.secondaryTextColor : 'black',
+              }}>
               {item.description}
             </Text>
           </CardContent>

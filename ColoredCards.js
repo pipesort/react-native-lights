@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 
 function ColorfulCards({data}) {
   return (
-    <View style={styles.card}>
+    <View>
       {/* {
           data && data.map((item, index)=>( */}
       <FlatList
