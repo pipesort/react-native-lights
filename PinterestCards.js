@@ -110,13 +110,17 @@ function PinterestCard({data}) {
                 fontSize: item.primaryTextSize ? item.primaryTextSize : 14,
                 textAlign: item.primaryTextAlign ? item.primaryTextAlign : 'left',
                 color: item.primaryTextColor ? item.primaryTextColor : 'black',
-                fontWeight: 'bold',
+                fontWeight: item.primaryFontWeight ? item.primaryFontWeight : "bold" ,
+                fontFamily : item.primaryFontFamily ? item.primaryFontFamily : "Arial"
               }}>
               {item.title}
             </Text>
             <Text style={{
               fontSize: item.secondaryTextSize ? item.secondaryTextSize : 12,
               color: item.secondaryTextColor ? item.secondaryTextColor : 'black',
+              textAlign: item.secondaryTextAlign ?  item.secondaryTextAlign : "left",
+              fontFamily: item.secondaryFontFamily ? item.secondaryFontFamily : "Arial",
+              fontWeight : item.secondaryFontWeight ? item.secondaryFontWeight : "normal"
               }}>
               {item.description}
             </Text>

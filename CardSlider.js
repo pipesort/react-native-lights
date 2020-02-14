@@ -49,30 +49,48 @@ function SlidingCards({data}) {
                       padding: cardData.cardPadding ? cardData.cardPadding : 10,
                       width: cardData.cardWidth ? cardData.cardWidth : 155,
                     }}>
-                    <Text
+                    {/* Card Header*/}
+                    <View
                       style={{
-                        color: cardData.primaryTextColor
-                          ? cardData.primaryTextColor
-                          : 'black',
-                        fontSize: cardData.primaryTextSize
-                          ? cardData.primaryTextSize
-                          : 20,
-                        fontWeight: 'bold',
+                        flex: 1,
+                        justifyContent: cardData.cardHeaderJustifyContent ? cardData.cardHeaderJustifyContent : "flex-start",
+                        alignItems: cardData.cardHeaderAlignItem ? cardData.cardHeaderAlignItem : "flex-start",
                       }}>
-                      {' '}
-                      {cardData.title}
-                    </Text>
-                    <Text
+                      <Text
+                        style={{
+                          color: cardData.primaryTextColor
+                            ? cardData.primaryTextColor
+                            : 'black',
+                          fontSize: cardData.primaryTextSize
+                            ? cardData.primaryTextSize
+                            : 20,
+                          fontWeight: 'bold',
+                        }}>
+                        {' '}
+                        {cardData.title}
+                      </Text>
+                    </View>
+                    {/*card Body*/}
+                    <View
                       style={{
-                        color: cardData.secondaryTextColor
-                          ? cardData.secondaryTextColor
-                          : '#777',
-                        margin:cardData.secondaryTextMargin
-                        ? cardData.secondaryTextMargin
-                        : 5
+                        flex: 2,
+                        height: cardData.cardBodyHeight ?  cardData.cardBodyHeight : 100,
+                        backgroundColor: 'red',
+                        alignItems: cardData.cardBodyAlignItem ? cardData.cardBodyAlignItem : "flex-start" ,
+                        justifyContent: cardData.cardBodyJustifyContent ?  cardData.cardBodyJustifyContent : "flex-start",
                       }}>
-                      {cardData.description}
-                    </Text>
+                      <Text
+                        style={{
+                          color: cardData.secondaryTextColor
+                            ? cardData.secondaryTextColor
+                            : '#777',
+                          margin: cardData.secondaryTextMargin
+                            ? cardData.secondaryTextMargin
+                            : 5,
+                        }}>
+                        {cardData.description}
+                      </Text>
+                    </View>
                   </View>
                 </ScrollView>
                 {/* {cardData.buttonTitle ? (
@@ -136,75 +154,105 @@ function SlidingCards({data}) {
                 padding: cardData.cardPadding ? cardData.cardPadding : 10,
                 width: cardData.cardWidth ? cardData.cardWidth : 155,
               }}>
-              <Text
-                style={{
-                  color: cardData.primaryTextColor
-                    ? cardData.primaryTextColor
-                    : 'white',
-                  fontSize: cardData.primaryTextSize
-                    ? cardData.primaryTextSize
-                    : 20,
-                  fontWeight: 'bold',
-                }}>
-                {cardData.title}
-              </Text>
-              <ScrollView>
+              {/*Card - header*/}
+
+              <View>
                 <Text
                   style={{
-                    color: cardData.secondaryTextColor
-                      ? cardData.secondaryTextColor
+                    color: cardData.primaryTextColor
+                      ? cardData.primaryTextColor
                       : 'white',
-                    fontSize: cardData.secondaryTextSize
-                      ? cardData.secondaryTextSize
-                      : 14,
+                    fontSize: cardData.primaryTextSize
+                      ? cardData.primaryTextSize
+                      : 20,
+                    fontWeight: 'bold',
                   }}>
-                  {cardData.description}
+                  {cardData.title}
                 </Text>
-              </ScrollView>
-              {cardData.buttonTitle ? (
-                <TouchableOpacity
-                  onPress={
-                    cardData.buttonFunction ? cardData.buttonFunction : null
-                  }>
+              </View>
+
+              {/*Card Body*/}
+              <View style={{flex: 2, justifyContent: 'center'}}>
+                <ScrollView
+                  style={{flex: 1}}
+                  contentContainerStyle={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
                   <View
                     style={{
-                      width: cardData.buttonWidth
-                        ? cardData.buttonWidth
-                        : '70%',
-                      height: cardData.buttonHeight
-                        ? cardData.buttonHeight
-                        : 40,
-                      marginTop: cardData.buttonTop ? cardData.buttonTop : 14,
-                      backgroundColor: cardData.buttonBackground
-                        ? cardData.buttonBackground
-                        : '#05ada5',
-                      borderRadius: cardData.buttonBorderRadius
-                        ? cardData.buttonBorderRadius
-                        : 10,
-                      padding: cardData.buttonPadding
-                        ? cardData.buttonPadding
-                        : 4,
+                      padding: 10,
+                      height: cardData.cardBodyHeight ? cardData.cardBodyHeight : 100,
+                      backgroundColor: 'red',
+                      alignItems: cardData.cardBodyAlignItem ? cardData.cardBodyAlignItem : "flex-start",
+                      justifyContent: cardData.cardBodyJustifyContent ? cardData.cardBodyJustifyContent : "flex-start",
                     }}>
                     <Text
                       style={{
-                        color: cardData.buttonTextColor
-                          ? cardData.buttonTextColor
+                        color: cardData.secondaryTextColor
+                          ? cardData.secondaryTextColor
                           : 'white',
-                        textAlign: cardData.buttonTextAlign
-                          ? cardData.buttonTextAlign
-                          : 'center',
-                        fontSize: cardData.buttonTextSize
-                          ? cardData.buttonTextSize
-                          : 12,
-                        marginTop: cardData.buttonTextTop
-                          ? cardData.buttonTextTop
-                          : 7,
+                        fontSize: cardData.secondaryTextSize
+                          ? cardData.secondaryTextSize
+                          : 14,
                       }}>
-                      {cardData.buttonTitle}
+                      {cardData.description}
                     </Text>
                   </View>
-                </TouchableOpacity>
-              ) : null}
+                </ScrollView>
+              </View>
+
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: cardData.cardButtomJustifyContent ? cardData.cardButtomJustifyContent : "flex-start",
+                  alignItems: cardData.cardButtonAlignItem ? cardData.cardButtonAlignItem : "flex-start",
+                }}>
+                {cardData.buttonTitle ? (
+                  <TouchableOpacity
+                    onPress={
+                      cardData.buttonFunction ? cardData.buttonFunction : null
+                    }>
+                    <View
+                      style={{
+                        width: cardData.buttonWidth
+                          ? cardData.buttonWidth
+                          : '70%',
+                        height: cardData.buttonHeight
+                          ? cardData.buttonHeight
+                          : 40,
+                        marginTop: cardData.buttonTop ? cardData.buttonTop : 14,
+                        backgroundColor: cardData.buttonBackground
+                          ? cardData.buttonBackground
+                          : '#05ada5',
+                        borderRadius: cardData.buttonBorderRadius
+                          ? cardData.buttonBorderRadius
+                          : 10,
+                        padding: cardData.buttonPadding
+                          ? cardData.buttonPadding
+                          : 4,
+                      }}>
+                      <Text
+                        style={{
+                          color: cardData.buttonTextColor
+                            ? cardData.buttonTextColor
+                            : 'white',
+                          textAlign: cardData.buttonTextAlign
+                            ? cardData.buttonTextAlign
+                            : 'center',
+                          fontSize: cardData.buttonTextSize
+                            ? cardData.buttonTextSize
+                            : 12,
+                          marginTop: cardData.buttonTextTop
+                            ? cardData.buttonTextTop
+                            : 7,
+                        }}>
+                        {cardData.buttonTitle}
+                      </Text>
+                    </View>
+                  </TouchableOpacity>
+                ) : null}
+              </View>
             </View>
           )}
         </>

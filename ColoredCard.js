@@ -112,7 +112,7 @@ function ColoredCard({
     {/* card-body */}
       <View style={{flex:2, justifyContent:"center"}}>
         <ScrollView style={{flex:1}} contentContainerStyle={{justifyContent:"center", alignItems:"center"}}>
-            <View style={{padding:10, height:cardBodyHeight, backgroundColor:"red", alignItems:cardBodyAlignItem, justifyContent:cardBodyJustifyContent}}>
+            <View style={{padding:10, height:cardBodyHeight, alignItems:cardBodyAlignItem, justifyContent:cardBodyJustifyContent}}>
                   <Text style={card.cardSecondaryText}>{description}</Text>
             </View>
         </ScrollView>
