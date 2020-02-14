@@ -53,7 +53,7 @@ function ColorfulCards({data}) {
             buttonTitle={item.buttonTitle}
             buttonFunction={item.buttonFunction}
             cardBackground={item.backgroundColor ? item.backgroundColor : '#399ce3'}
-            cardHeight={item.cardHeight ? item.cardHeight : 300}
+            cardHeight={item.cardHeight ? item.cardHeight : 320}
             cardWidth={item.cardWidth ? item.cardWidth : null}
             cardFlexDirection="column"
             cardMargin={item.cardMargin ? item.cardMargin :10}
@@ -76,6 +76,13 @@ function ColorfulCards({data}) {
             buttonTextBottom={item.buttonTextBottom ? item.buttonTextBottom :8}
             buttonTextSize={item.buttonTextSize ? item.buttonTextSize :14}
             buttonTextTop={item.buttonTextTop ? item.buttonTextTop :8}
+            cardBodyHeight={item.cardBodyHeight ? item.cardBodyHeight : 150 }
+            cardHeaderJustifyContent={item.cardHeaderJustifyContent ? item.cardHeaderJustifyContent: "flex-start"}
+            cardBodyJustifyContent={item.cardBodyJustifyContent ? item.cardBodyJustifyContent : "flex-start"}
+            cardButtomJustifyContent={item.cardButtomJustifyContent ? item.cardButtomJustifyContent : "flex-start"}
+            cardBodyAlignItem={item.cardBodyAlignItem ? item.cardBodyAlignItem : "flex-start"}
+            cardHeaderAlignItem={item.cardHeaderAlignItem ? item.cardHeaderAlignItem : "flex-start"}
+            cardButtonAlignItem={item.cardButtonAlignItem ? item.cardButtonAlignItem : "flex-start"}
           />
         )}
       />

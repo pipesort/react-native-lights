@@ -86,6 +86,7 @@ function PinterestCard({data}) {
             backgroundColor: 'transparent',
             elevation: 0,
           }}>
+        <TouchableOpacity activeOpacity={1} onPress={item.buttonFunction ? item.buttonFunction : null} >
           <CardHeader
             image={{uri: item.image}}
             imageStyle={{
@@ -102,6 +103,7 @@ function PinterestCard({data}) {
               // fontSize: item.fontSize ? item.fontSize :16,
             }}
           />
+          </TouchableOpacity>
           <CardContent>
             <Text
               style={{
@@ -120,6 +122,7 @@ function PinterestCard({data}) {
       numColumns={2}
       keyExtractor={(item, index) => index.toString()}
     />
+    
   );
 
   // return (
@@ -142,8 +145,11 @@ function PinterestCard({data}) {
 
 function PinterestCards({data}) {
   return (
+    <View style={{flex:1}} >
+
     <View style={styles.MainContainer}>
       <PinterestCard data={data} />
+    </View>
     </View>
   );
 }
