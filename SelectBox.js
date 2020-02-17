@@ -8,28 +8,29 @@ import {
   ScrollView,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
+import Input from './TextInput.js'
 
 
 
 
-function SelectBox({placeholder, label, renderItem, data}) {
+function SelectBox({placeholder, placeholderColor, fontSize , fontWeight,  label, TextBoxStyle , renderItem, data}) {
   const [value, setValue] = useState('');
   const ref = useRef(null);
   return (
     <>
       <View>
      
-        <Text style={{color: '#787878', fontSize: 14}}>{label}</Text>
       
         <View style={{marginLeft: -3}}>
          
-          <TextInput
-            placeholder={placeholder}
-            placeholderTextColor="#c4c4c4"
-            style={{fontSize: 18, fontWeight: 'bold'}}
+          <Input
+            placeholder={placeholder ? placeholder : "Placeholder"}
+            placeholderTextColor={placeholderColor ? placeholderColor : "#c4c4c4"}
+            style={{fontSize:fontSize ? fontSize : 18, fontWeight: fontWeight ? fontWeight : "bold"}}
             onFocus={() => ref.current.open()}
             onTouchStart={() => ref.current.open()}
             value={value}
+            label={label}
           />
         
         </View>
@@ -83,10 +84,14 @@ function Select({data,options}) {
     <View>
       <SelectBox
         placeholder={data.placeholder}
+        color={data.placeholderColor}
         data={options}
         onSelect={item => item}
         renderItem={({item}) => <Country id={item} country={item} />}
         label={data.label}
+        value={data.value}
+        fontSize={data.fontSize}
+        fontWeight={data.fontWeight}
       />
     </View>
   );

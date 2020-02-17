@@ -73,10 +73,8 @@ function SlidingCards({data}) {
                     {/*card Body*/}
                     <View
                       style={{
-                        flex: 2,
-                        height: cardData.cardBodyHeight ?  cardData.cardBodyHeight : 100,
-                        backgroundColor: 'red',
-                        alignItems: cardData.cardBodyAlignItem ? cardData.cardBodyAlignItem : "flex-start" ,
+                        flex: 1,
+                        height: cardData.cardBodyHeight ?  cardData.cardBodyHeight : 100,                        alignItems: cardData.cardBodyAlignItem ? cardData.cardBodyAlignItem : "flex-start" ,
                         justifyContent: cardData.cardBodyJustifyContent ?  cardData.cardBodyJustifyContent : "flex-start",
                       }}>
                       <Text
@@ -181,9 +179,8 @@ function SlidingCards({data}) {
                   }}>
                   <View
                     style={{
-                      padding: 10,
+                    paddingTop: 5, 
                       height: cardData.cardBodyHeight ? cardData.cardBodyHeight : 100,
-                      backgroundColor: 'red',
                       alignItems: cardData.cardBodyAlignItem ? cardData.cardBodyAlignItem : "flex-start",
                       justifyContent: cardData.cardBodyJustifyContent ? cardData.cardBodyJustifyContent : "flex-start",
                     }}>
