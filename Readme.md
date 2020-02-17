@@ -33,6 +33,32 @@ yarn add 1000Lights
 npm install --save 1000Lights
 
 ```
+## Usage:
+
+BottomSheet is the new modal window. BottomSheet component is a fully customiable component that shows notifiation and alert message on 
+
+```javascript
+
+import ColoredCards from "react-native-1000Lights";
+const ColoredCards = () => {
+    const data =
+     {
+       buttonText: 'click me',
+       buttonStyles:{borderRadius:5,backgroundColor:"black", buttonTextColor:"white"},
+       bottomSheetStyles:{backgroundColor:"#25e8e2" , textFontSize:15, textColor:"white"},
+       bodyText: 'Show notification the modern way',  
+     }
+  return (
+    <View style={{flex:1}}
+<BottomSheet data={data}/>
+    </View>
+  );
+};
+
+```
+![react-native-1000Lights/BottomSheet]()
+
+
 
 
 ### [Documentation](https://www.google.com)
