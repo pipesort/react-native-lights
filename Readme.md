@@ -56,8 +56,8 @@ const ColoredCards = () => {
 };
 
 ```
-![react-native-1000Lights/BottomSheet]()
 
+![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedColoredCardsGif.gif)
 
 
 
