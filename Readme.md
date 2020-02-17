@@ -148,6 +148,7 @@ import Input from "react-native-1000Lights";
 ```
 ![react-native-1000Lights/BottomSheet]()
 
+![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedColoredCardsGif.gif)
 
 To view complete documenation you can check out **[1000lights documentation page](https://www.google.com)**.
 
