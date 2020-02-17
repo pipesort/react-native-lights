@@ -3,7 +3,7 @@
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
-![alt text](/assets/Images/banner1.png "Logo Title Text 1")
+![alt text](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/banner1.png)
 
 ## Contains
 
