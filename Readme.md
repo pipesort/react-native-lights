@@ -3,7 +3,7 @@
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
-![alt text](/assets/Images/banner1.png "Logo Title Text 1")
+![alt text](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/banner1.png)
 
 ## Contains
 
@@ -59,7 +59,7 @@ const BottomSheet = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet]()
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/CroppedBottomSheetGif.gif)
 
 
 Just pass in the array and have your card slider ready to use in your app
@@ -116,7 +116,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet]()
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedCardSliderGif.gif)
 
 
 Input
@@ -146,7 +146,6 @@ import Input from "react-native-1000Lights";
 };
 
 ```
-![react-native-1000Lights/BottomSheet]()
 
 ![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedColoredCardsGif.gif)
 
