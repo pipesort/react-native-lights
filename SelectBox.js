@@ -31,6 +31,7 @@ function SelectBox({placeholder, placeholderColor, fontSize , fontWeight,  label
             onTouchStart={() => ref.current.open()}
             value={value}
             label={label}
+            disabled={true}
           />
         
         </View>
@@ -84,7 +85,6 @@ function Select({data,options}) {
     <View>
       <SelectBox
         placeholder={data.placeholder}
-        color={data.placeholderColor}
         data={options}
         onSelect={item => item}
         renderItem={({item}) => <Country id={item} country={item} />}
@@ -92,6 +92,7 @@ function Select({data,options}) {
         value={data.value}
         fontSize={data.fontSize}
         fontWeight={data.fontWeight}
+        placeholderColor={data.placeholderColor}
       />
     </View>
   );
