@@ -3,7 +3,7 @@
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
-![alt text](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/banner1.png)
+![alt text](/assets/Images/banner1.png "Logo Title Text 1")
 
 ## Contains
 
@@ -39,8 +39,8 @@ BottomSheet is the new modal window. BottomSheet component is a fully customiabl
 
 ```javascript
 
-import ColoredCards from "react-native-1000Lights";
-const ColoredCards = () => {
+import BottomSheet from "react-native-1000Lights";
+const BottomSheet = () => {
     const data =
      {
        buttonText: 'click me',
@@ -50,8 +50,98 @@ const ColoredCards = () => {
      }
   return (
     <View style={{flex:1}}
-<BottomSheet data={data}/>
+<BottomSheet data={data} />
     </View>
+  );
+};
+
+```
+
+### Example
+
+![react-native-1000Lights/BottomSheet]()
+
+
+Just pass in the array and have your card slider ready to use in your app
+
+```javascript
+
+
+import CardSlider from "react-native-1000Lights";
+
+const ColoredCards = () => {
+
+     const cardItems = [
+        {
+          title: 'Card 1 ',
+          description: 'Include images to your card',
+          buttonTitle: 'Get Started',
+          backgroundImage: {uri:'https://i.imgur.com/2nCt3Sbl.jpg'},
+          buttonFunction: function(){
+            Alert.alert("Thank You", "for choosing Thousand Lights!", [{text:"Welcome"}])
+        }
+        },
+        {
+            title: 'Card 2',
+            description: 'You can choose to just have background color',
+            buttonTitle: 'Get Started',
+            backgroundColor: 'black',
+        },
+        {
+          title: 'Card 3 ',
+          description: 'onPress function is tagged to the image.',
+          buttonTitle: 'Get Started',
+          backgroundImage: {uri:'https://i.imgur.com/2nCt3Sbl.jpg'},
+          buttonFunction: function(){
+              Alert.alert("Thank You", "for choosing Thousand Lights!", [{text:"Welcome"}])
+          }
+        },
+        {
+            title: 'Card 2',
+            description: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+            buttonTitle: 'Get Started',
+            backgroundImage:{uri:'https://i.imgur.com/KZsmUi2l.jpg'},
+        },
+      ];
+
+
+  return (
+    <View style={{flex:1}}>
+    <CardSlider data={cardItems} />
+    </View>
+  );
+};
+
+```
+
+### Example
+
+![react-native-1000Lights/BottomSheet]()
+
+
+Input
+
+Different types of input with/without Icons can now be used with ease.
+
+```javascript
+
+
+import Input from "react-native-1000Lights";
+
+  return (
+    <Input
+      placeholder="9999999999"
+      placeholderTextColor="#7d7d7d"
+      autoFocus={true}
+      maxLength={10}
+      keyboardType={"numeric"}
+      leftInputIcon={
+        <Icon
+          name="face"
+          size={25}
+          // color="white"
+          style={{ marginRight: 15 }}
+        />
   );
 };
 
@@ -59,6 +149,24 @@ const ColoredCards = () => {
 ![react-native-1000Lights/BottomSheet]()
 
 
+To view complete documenation you can check out **[1000lights documentation page](https://www.google.com)**.
+
+## How can I support 1000Lights
+
++ Give us some :star2: stars 
++ Follow us on [Twitter](https://twitter.com/pipesort)
++ Suggest new components, submit bugs and help us improve the library better
 
 
-### [Documentation](https://www.google.com)
+## Licence
+
+MIT licence
+
+## From Developers
+
+Made with :heart: by Pipesort developers.
+
+ 
+
+
+
