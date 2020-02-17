@@ -64,6 +64,7 @@ const BottomSheet = () => {
 
 Just pass in the array and have your card slider ready to use in your app
 
+
 ```javascript
 
 
@@ -118,7 +119,7 @@ const ColoredCards = () => {
 
 ![react-native-1000Lights/BottomSheet](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedCardSliderGif.gif)
 
-
+<br />
 Input
 
 Different types of input with/without Icons can now be used with ease.
@@ -147,7 +148,9 @@ import Input from "react-native-1000Lights";
 
 ```
 
-![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedColoredCardsGif.gif)
+<br />
+
+![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedInputImage.jpg)
 
 To view complete documenation you can check out **[1000lights documentation page](https://www.google.com)**.
 
