@@ -3,7 +3,7 @@
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
-![alt text](https://github.com/pipesort/react-native-lights/blob/npm/assets/fonts/Images/banner1.png)
+![alt text](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/banner1.png)
 
 ## Contains
 
