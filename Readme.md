@@ -152,7 +152,7 @@ import Input from "react-native-1000Lights";
 
 ![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedInputImage.jpg)
 
-To view complete documenation you can check out **[1000lights documentation page](https://www.google.com)**.
+To view complete documenation you can check out **[1000lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
 
 ## How can I support 1000Lights
 
