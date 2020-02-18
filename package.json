@@ -1,25 +1,32 @@
 {
-  "name": "react-native-pipesort-component",
-  "version": "1.2.12",
-  "description": "A modernised UI kit for mobile apps.",
+  "name": "react-native-lights",
+  "version": "0.0.1",
+  "description": "A modernised light-weight UI kit for mobile apps.",
   "main": "index.js",
   "scripts": {
-    "test": "yarn add react-native-pipesort-component"
+    "test": "yarn add react-native-lights"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pipesort/native-components.git"
+    "url": "git+https://github.com/pipesort/react-native-lights.git"
   },
   "keywords": [
-    "input",
-    "text-input"
+    "Bottomsheet",
+    "Cards",
+    "Card slider",
+    "Colored cards",
+    "Input",
+    "Modal",
+    "Pinterest cards",
+    "TextInput", 
+    "SelectBox"    
   ],
   "author": "Pipesort Technologies",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pipesort/native-components/issues"
+    "url": "https://github.com/pipesort/react-native-lights/issues"
   },
-  "homepage": "https://github.com/pipesort/native-components#readme",
+  "homepage": "https://github.com/pipesort/react-native-lights#readme",
   "peerDependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
