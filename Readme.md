@@ -1,5 +1,5 @@
 
-# **1000 Lights**
+# **Lights**
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
@@ -14,7 +14,7 @@ Light-Weight React Native UI library to build modern Mobile apps.
 
 ## Quick start
 
-**1000 Lights** is a library that's tested and built for your to develop modern mobile apps using React Native.
+**Lights** is a library that's tested and built for your to develop modern mobile apps using React Native.
 
 We give you modern and highly customizable general use components that you use in & out in your project.
 
@@ -22,7 +22,7 @@ We give you modern and highly customizable general use components that you use i
 
 ```javascript
 
-yarn add 1000Lights
+yarn add react-native-lights
 
 ```
 
@@ -30,7 +30,7 @@ yarn add 1000Lights
 
 ```javascript
 
-npm install --save 1000Lights
+npm install --save react-native-lights
 
 ```
 ## Usage:
@@ -39,7 +39,7 @@ BottomSheet is the new modal window. BottomSheet component is a fully customiabl
 
 ```javascript
 
-import BottomSheet from "react-native-1000Lights";
+import BottomSheet from "react-native-lights";
 const BottomSheet = () => {
     const data =
      {
@@ -59,7 +59,7 @@ const BottomSheet = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/CroppedBottomSheetGif.gif)
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/CroppedBottomSheetGif.gif)
 
 
 Just pass in the array and have your card slider ready to use in your app
@@ -68,7 +68,7 @@ Just pass in the array and have your card slider ready to use in your app
 ```javascript
 
 
-import CardSlider from "react-native-1000Lights";
+import CardSlider from "react-native-lights";
 
 const ColoredCards = () => {
 
@@ -117,7 +117,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedCardSliderGif.gif)
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/cropedCardSliderGif.gif)
 
 <br />
 Input
@@ -127,7 +127,7 @@ Different types of input with/without Icons can now be used with ease.
 ```javascript
 
 
-import Input from "react-native-1000Lights";
+import Input from "react-native-lights";
 
   return (
     <Input
@@ -150,11 +150,11 @@ import Input from "react-native-1000Lights";
 
 <br />
 
-![](https://github.com/pipesort/native-components/blob/npm/assets/fonts/Images/cropedInputImage.jpg)
+![](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/cropedInputImage.jpg)
 
-To view complete documenation you can check out **[1000lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
+To view complete documenation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
 
-## How can I support 1000Lights
+## How can I support Lights
 
 + Give us some :star2: stars 
 + Follow us on [Twitter](https://twitter.com/pipesort)
