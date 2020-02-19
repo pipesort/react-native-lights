@@ -59,7 +59,7 @@ const BottomSheet = () => {
 
 ### Example
 
-![BottomSheet](assets/fonts/Images/croppedbottomsheet.gif)
+![BottomSheet](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedbottomsheet.gif?token=AM2TYJHC2KH6BPCU3KULQWS6K2A6I)
 
 
 
@@ -71,7 +71,7 @@ Just pass in the array and have your card slider ready to use in your app
 
 import CardSlider from "react-native-lights";
 
-const ColoredCards = () => {
+const CardSlider = () => {
 
      const cardItems = [
         {git
@@ -118,7 +118,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![CardSlider](assets/fonts/Images/croppedcardslidernewGif.gif)
+![CardSlider](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedcardslidernewGif.gif?token=AM2TYJGXB5AXMEVTRSVDSL26K2BAK)
 
 <br />
 Input
@@ -151,7 +151,7 @@ import Input from "react-native-lights";
 
 <br />
 
-![Input](assets/fonts/Images/croppedInputImage.jpg)
+![Input](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedInputImage.jpg?token=AM2TYJATLAEIOJ4NN3XMRPC6K2BDO)
 
 To view complete documentation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
 
