@@ -146,6 +146,7 @@ import Input from "react-native-lights";
           size={25}
           style={{ marginRight: 15 }}
         />
+      }
       />
   );
 };
