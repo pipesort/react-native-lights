@@ -59,7 +59,7 @@ const BottomSheet = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/CroppedBottomSheetGif.gif)
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedbottomsheet.gif)
 
 
 Just pass in the array and have your card slider ready to use in your app
@@ -79,7 +79,7 @@ const ColoredCards = () => {
           buttonTitle: 'Get Started',
           backgroundImage: {uri:'https://i.imgur.com/2nCt3Sbl.jpg'},
           buttonFunction: function(){
-            Alert.alert("Thank You", "for choosing Thousand Lights!", [{text:"Welcome"}])
+            Alert.alert("Thank You", "for choosing Lights!", [{text:"Welcome"}])
         }
         },
         {
@@ -94,7 +94,7 @@ const ColoredCards = () => {
           buttonTitle: 'Get Started',
           backgroundImage: {uri:'https://i.imgur.com/2nCt3Sbl.jpg'},
           buttonFunction: function(){
-              Alert.alert("Thank You", "for choosing Thousand Lights!", [{text:"Welcome"}])
+              Alert.alert("Thank You", "for choosing Lights!", [{text:"Welcome"}])
           }
         },
         {
@@ -117,7 +117,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/cropedCardSliderGif.gif)
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedcardslider.gif)
 
 <br />
 Input
@@ -150,7 +150,7 @@ import Input from "react-native-lights";
 
 <br />
 
-![](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/cropedInputImage.jpg)
+![](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedInputImage.jpg)
 
 To view complete documenation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
 
