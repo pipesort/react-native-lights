@@ -73,7 +73,7 @@ import CardSlider from "react-native-1000Lights";
 const ColoredCards = () => {
 
      const cardItems = [
-        {
+        {git
           title: 'Card 1 ',
           description: 'Include images to your card',
           buttonTitle: 'Get Started',
