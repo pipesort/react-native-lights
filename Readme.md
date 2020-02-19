@@ -3,7 +3,7 @@
 
 Light-Weight React Native UI library to build modern Mobile apps.
 
-![alt text](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/banner1.png)
+![alt text](https://raw.githubusercontent.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/banner1.png)
 
 ## Contains
 
@@ -59,7 +59,7 @@ const BottomSheet = () => {
 
 ### Example
 
-![react-native-Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedbottomsheet.gif)
+![react-native-Lights/BottomSheet](https://raw.githubusercontent.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedbottomsheet.gif)
 
 
 Just pass in the array and have your card slider ready to use in your app
@@ -117,7 +117,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![react-native-Lights/cardslider](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedcardslidernewGif.gif)
+![react-native-Lights/cardslider](pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedcardslidernewGif.gif)
 
 <br />
 Input
@@ -150,9 +150,9 @@ import Input from "react-native-lights";
 
 <br />
 
-![[react-native-Lights/textinput](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedInputImage.jpg)
+![react-native-Lights/textinput](pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedInputImage.jpg)
 
-To view complete documenation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
+To view complete documentation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
 
 ## How can I support Lights
 
