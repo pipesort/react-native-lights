@@ -117,7 +117,7 @@ const ColoredCards = () => {
 
 ### Example
 
-![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedcardslider.gif)
+![react-native-1000Lights/BottomSheet](https://github.com/pipesort/react-native-lights/blob/master/assets/fonts/Images/croppedcardslidernewGif.gif)
 
 <br />
 Input
