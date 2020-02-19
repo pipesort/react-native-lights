@@ -7,16 +7,16 @@ Light-Weight React Native UI library to build modern Mobile apps.
 
 ## Contains
 
-+ **6+** completely customizable components built and tested to ease your efforts
-+ Based on the **Modern UI and UX trends**.
++ **6+** completely customizable components built and tested to ease your efforts.
++ Based on **Modern UI and UX trends**.
 + **Light-weight**
-+ **Simple and clear** documentation with examples
++ **Simple and clear** documentation with examples.
 
 ## Quick start
 
-**Lights** is a library that's tested and built for your to develop modern mobile apps using React Native.
+**Lights** is a library that's tested and built for you to develop modern mobile apps using React Native.
 
-We give you modern and highly customizable general use components that you use in & out in your project.
+We give you modern and highly customizable general use components that you use in & out in all your projects.
 
 ## Installation
 
@@ -35,7 +35,9 @@ npm install --save react-native-lights
 ```
 ## Usage:
 
-BottomSheet is the new modal window. BottomSheet component is a fully customiable component that shows notifiation and alert message on 
+## BottomSheet
+
+BottomSheet is the new modal window. BottomSheet component is a fully customizable component that **shows notifiation and alert message in apps.**
 
 ```javascript
 
@@ -50,7 +52,7 @@ const BottomSheet = () => {
      }
   return (
     <View style={{flex:1}}
-<BottomSheet data={data} />
+      <BottomSheet data={data} />
     </View>
   );
 };
@@ -61,9 +63,9 @@ const BottomSheet = () => {
 
 ![BottomSheet](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedbottomsheet.gif?token=AM2TYJHC2KH6BPCU3KULQWS6K2A6I)
 
+## CardSlider
 
-
-Just pass in the array and have your card slider ready to use in your app
+Pass in the array and have your card slider ready to use in your app.
 
 
 ```javascript
@@ -109,7 +111,7 @@ const CardSlider = () => {
 
   return (
     <View style={{flex:1}}>
-    <CardSlider data={cardItems} />
+      <CardSlider data={cardItems} />
     </View>
   );
 };
@@ -121,9 +123,10 @@ const CardSlider = () => {
 ![CardSlider](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedcardslidernewGif.gif?token=AM2TYJGXB5AXMEVTRSVDSL26K2BAK)
 
 <br />
-Input
 
-Different types of input with/without Icons can now be used with ease.
+## Input
+
+Different types of input with/without Icons can now be included with ease in your projects.
 
 ```javascript
 
@@ -141,15 +144,17 @@ import Input from "react-native-lights";
         <Icon
           name="face"
           size={25}
-          // color="white"
           style={{ marginRight: 15 }}
         />
+      />
   );
 };
 
 ```
 
 <br />
+
+### Example
 
 ![Input](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedInputImage.jpg?token=AM2TYJATLAEIOJ4NN3XMRPC6K2BDO)
 
@@ -159,12 +164,11 @@ To view complete documentation you can check out **[Lights documentation page](h
 
 + Give us some :star2: stars 
 + Follow us on [Twitter](https://twitter.com/pipesort)
-+ Suggest new components, submit bugs and help us improve the library better
-
++ Suggest new components, submit bugs and help us improve the library.
 
 ## Licence
 
-MIT licence
+ISC licence
 
 ## From Developers
 
