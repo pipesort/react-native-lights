@@ -41,7 +41,7 @@ BottomSheet is the new modal window. BottomSheet component is a fully customizab
 
 ```javascript
 
-import BottomSheet from "react-native-lights";
+import { BottomSheet } from "react-native-lights";
 const BottomSheet = () => {
     const data =
      {
@@ -71,7 +71,7 @@ Pass in the array and have your card slider ready to use in your app.
 ```javascript
 
 
-import CardSlider from "react-native-lights";
+import { CardSlider } from "react-native-lights";
 
 const CardSlider = () => {
 
@@ -131,7 +131,7 @@ Different types of input with/without Icons can now be included with ease in you
 ```javascript
 
 
-import Input from "react-native-lights";
+import { Input } from "react-native-lights";
 
   return (
     <Input
@@ -169,7 +169,7 @@ To view complete documentation you can check out **[Lights documentation page](h
 
 ## Licence
 
-ISC licence
+MIT licence
 
 ## From Developers
 
