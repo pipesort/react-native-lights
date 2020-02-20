@@ -39,7 +39,7 @@ function SelectBox({
             onTouchStart={() => ref.current.open()}
             value={value}
             label={label}
-            disabled={true}
+            disabled={false}
           />
         </View>
       </View>
