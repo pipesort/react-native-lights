@@ -159,7 +159,7 @@ import { Input } from "react-native-lights";
 
 ![Input](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/croppedInputImage.jpg?token=AM2TYJATLAEIOJ4NN3XMRPC6K2BDO)
 
-To view complete documentation you can check out **[Lights documentation page](https://pipesort.github.io/1000lights-website/gettingStarted)**.
+To view complete documentation you can check out **[Lights documentation page](https://pipesort.github.io/lights-website/gettingStarted)**.
 
 ## How can I support Lights
 
