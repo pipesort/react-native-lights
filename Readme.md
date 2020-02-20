@@ -1,7 +1,7 @@
 
 # **Lights**
 
-Light-Weight React Native UI library to build modern Mobile apps.
+Light-Weight React Native UI library to build modern mobile apps.
 
 ![Banner Image](https://raw.githubusercontent.com/pipesort/react-native-lights/master/assets/fonts/Images/banner1.png?token=AM2TYJEBLCX32EDQXX7KX326K2C3Q)
 

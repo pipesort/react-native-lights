@@ -8,34 +8,40 @@ import {
   ScrollView,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import Input from './TextInput.js'
+import Input from './TextInput';
 
-
-
-
-function SelectBox({placeholder, placeholderColor, fontSize , fontWeight,  label, TextBoxStyle , renderItem, data}) {
+function SelectBox({
+  placeholder,
+  placeholderColor,
+  fontSize,
+  fontWeight,
+  label,
+  TextBoxStyle,
+  renderItem,
+  data,
+}) {
   const [value, setValue] = useState('');
   const ref = useRef(null);
   return (
     <>
       <View>
-     
-      
         <View style={{marginLeft: -3}}>
-         
           <Input
-            placeholder={placeholder ? placeholder : "Placeholder"}
-            placeholderTextColor={placeholderColor ? placeholderColor : "#c4c4c4"}
-            style={{fontSize:fontSize ? fontSize : 18, fontWeight: fontWeight ? fontWeight : "bold"}}
+            placeholder={placeholder ? placeholder : 'Placeholder'}
+            placeholderTextColor={
+              placeholderColor ? placeholderColor : '#c4c4c4'
+            }
+            style={{
+              fontSize: fontSize ? fontSize : 18,
+              fontWeight: fontWeight ? fontWeight : 'bold',
+            }}
             onFocus={() => ref.current.open()}
             onTouchStart={() => ref.current.open()}
             value={value}
             label={label}
             disabled={true}
           />
-        
         </View>
-        
       </View>
       <RBSheet
         ref={ref}
@@ -70,7 +76,6 @@ function SelectBox({placeholder, placeholderColor, fontSize , fontWeight,  label
   );
 }
 
-
 function Country({country}) {
   return (
     <View style={{padding: 5, margin: 10}}>
@@ -79,8 +84,7 @@ function Country({country}) {
   );
 }
 
-function Select({data,options}) {
-  
+function Select({data, options}) {
   return (
     <View>
       <SelectBox

@@ -1,214 +1,59 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
   View,
   FlatList,
-  StyleSheet,
-  Image,
-  Text,
-  ScrollView,
-  TouchableOpacity,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import ColoredCard from './ColoredCard';
 
-import {Card, CardHeader, CardContent, CardFooter} from '../Card';
 
-import Button from '../Button/Button';
-
-const styles = StyleSheet.create({
-  card: {
-    flex: 1,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    width: 150,
-    height: 50,
-    marginTop: 40,
-    color: 'gray',
-    borderRadius: 1,
-    backgroundColor: '#05ada5',
-    borderRadius: 12,
-    padding: 8,
-    justifyContent: 'flex-end',
-  },
-  buttonTextStyle: {
-    color: 'white',
-    textAlign: 'center',
-    marginBottom: 8,
-  },
-});
-
-function ColoredCard({
-  title,
-  description,
-  buttonTitle,
-  cardBackground,
-  cardHeight,
-  cardFlexDirection,
-  cardMargin,
-  cardBorderRadius,
-  cardPadding,
-  primaryTextColor,
-  primaryTextSize,
-  primaryTextWeight,
-  primaryTextTop,
-  secondaryTextColor,
-  secondaryTextSize,
-  buttonWidth,
-  buttonHeight,
-  buttonTop,
-  buttonBackground,
-  buttonBorderRadius,
-  buttonPadding,
-  buttonTextColor,
-  buttonTextAlign,
-  buttonTextBottom,
-  buttonTextSize,
-  buttonTextTop,
-}) {
-  const card = StyleSheet.create({
-    cardColor: {
-      backgroundColor: cardBackground,
-      height: cardHeight,
-      flexDirection: cardFlexDirection,
-      margin: cardMargin,
-      borderRadius: cardBorderRadius,
-      padding: cardPadding,
-    },
-    cardPrimaryText: {
-      color: primaryTextColor,
-      fontSize: primaryTextSize,
-      fontWeight: primaryTextWeight,
-      marginTop: primaryTextTop,
-    },
-    cardSecondaryText: {
-      color: secondaryTextColor,
-      fontSize: secondaryTextSize,
-    },
-    button: {
-      width: buttonWidth,
-      height: buttonHeight,
-      marginTop: buttonTop,
-      backgroundColor: buttonBackground,
-      borderRadius: buttonBorderRadius,
-      padding: buttonPadding,
-    },
-    buttonTitleStyle: {
-      color: buttonTextColor,
-      textAlign: buttonTextAlign,
-      fontSize: buttonTextSize,
-      marginTop: buttonTextTop,
-      marginBottom: buttonTextBottom,
-      fontSize: buttonTextSize,
-    },
-  });
-
+function ColorfulCards({data}) {
   return (
-    <Fragment>
-      <Card style={{}}>
-        <CardHeader
-          title="Hello Lorem"
-          description="By Lorem"
-          titleStyle={{
-            color: 'red',
-          }}
-          descriptionStyle={{
-            color: 'blue',
-          }}
-          image={{
-            uri: 'https://i.imgur.com/lceHsT6l.jpg',
-          }}
-          rightIcon={
-            <Icon
-              name="dots-vertical"
-              size={25}
-              // color="white"
-              style={{marginRight: 15}}
-              onPress={() => {
-                ref.current.open();
-              }}
-            />
-          }
-          leftIcon={
-            <Icon
-              name="face"
-              size={25}
-              // color="white"
-              style={{marginRight: 15}}
-              onPress={() => {
-                ref.current.open();
-              }}
-            />
-          }
-        />
-        <CardContent>
-          <Text>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </Text>
-        </CardContent>
-        <CardFooter>
-          <Button>Get Started</Button>
-          {/* <Button>Leave us</Button> */}
-        </CardFooter>
-      </Card>
-      <View style={card.cardColor}>
-        <Text style={card.cardPrimaryText}>{title}</Text>
-        <Text style={card.cardSecondaryText}>{description}</Text>
-        {buttonTitle ? (
-          <TouchableOpacity>
-            <View style={card.button}>
-              <Text style={card.buttonTitleStyle}>{buttonTitle}</Text>
-            </View>
-          </TouchableOpacity>
-        ) : null}
-      </View>
-    </Fragment>
-  );
-}
-
-function ColorfulCards() {
-  return (
-    <ScrollView>
-      <View style={styles.card}>
-        <ColoredCard
-          title="card1"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book."
-          buttonTitle="Get Started"
-          cardBackground="#000000"
-          cardHeight={300}
-          cardFlexDirection="column"
-          cardMargin={10}
-          cardBorderRadius={20}
-          cardPadding={16}
-          primaryTextColor="white"
-          primaryTextSize={28}
-          primaryTextWeight="bold"
-          primaryTextTop={15}
-          secondaryTextColor="white"
-          secondaryTextSize={16}
-          buttonWidth={150}
-          buttonHeight={50}
-          buttonTop={40}
-          buttonBackground="#05ada5"
-          buttonBorderRadius={12}
-          buttonPadding={8}
-          buttonTextColor="white"
-          buttonTextAlign="center"
-          buttonTextBottom={8}
-          buttonTextSize={14}
-          buttonTextTop={8}
-        />
-      </View>
-    </ScrollView>
+    <View>
+      <FlatList
+        data={data}
+        renderItem={({item, index}) => (
+          <ColoredCard
+            key={index}
+            title={item.title}
+            description={item.description}
+            buttonTitle={item.buttonTitle}
+            buttonFunction={item.buttonFunction}
+            cardBackground={item.backgroundColor ? item.backgroundColor : '#399ce3'}
+            cardHeight={item.cardHeight ? item.cardHeight : 320}
+            cardWidth={item.cardWidth ? item.cardWidth : null}
+            cardFlexDirection="column"
+            cardMargin={item.cardMargin ? item.cardMargin :10}
+            cardBorderRadius={item.cardBorderRadius ? item.cardBorderRadius : 20}
+            cardPadding={item.cardPadding ? item.cardPadding :16}
+            primaryTextColor={item.primaryTextColor ? item.primaryTextColor :"white"}
+            primaryTextSize={item.primaryTextSize ? item.primaryTextSize :28}
+            primaryTextWeight={item.primaryTextWeight ? item.primaryTextWeight :"bold"}
+            primaryTextTop={item.primaryTextTop ? item.primaryTextTop :15}
+            secondaryTextColor={item.secondaryTextColor ? item.secondaryTextColor :"white"}
+            secondaryTextSize={item.secondaryTextSize ? item.secondaryTextSize :16}
+            buttonWidth={item.buttonWidth ? item.buttonWidth :150}
+            buttonHeight={item.buttonHeight ? item.buttonHeight :50}
+            buttonTop={item.buttonTop ? item.buttonTop :20}
+            buttonBackground={item.buttonBackground ? item.buttonBackground :"#05ada5"}
+            buttonBorderRadius={item.buttonBorderRadius ? item.buttonBorderRadius :12}
+            buttonPadding={item.buttonPadding ? item.buttonPadding :8}
+            buttonTextColor={item.buttonTextColor ? item.buttonTextColor :"white"}
+            buttonTextAlign={item.buttonTextAlign ? item.buttonTextAlign : "center"}
+            buttonTextBottom={item.buttonTextBottom ? item.buttonTextBottom :8}
+            buttonTextSize={item.buttonTextSize ? item.buttonTextSize :14}
+            buttonTextTop={item.buttonTextTop ? item.buttonTextTop :8}
+            cardBodyHeight={item.cardBodyHeight ? item.cardBodyHeight : 150 }
+            cardHeaderJustifyContent={item.cardHeaderJustifyContent ? item.cardHeaderJustifyContent: "flex-start"}
+            cardBodyJustifyContent={item.cardBodyJustifyContent ? item.cardBodyJustifyContent : "flex-start"}
+            cardButtomJustifyContent={item.cardButtomJustifyContent ? item.cardButtomJustifyContent : "flex-start"}
+            cardBodyAlignItem={item.cardBodyAlignItem ? item.cardBodyAlignItem : "flex-start"}
+            cardHeaderAlignItem={item.cardHeaderAlignItem ? item.cardHeaderAlignItem : "flex-start"}
+            cardButtonAlignItem={item.cardButtonAlignItem ? item.cardButtonAlignItem : "flex-start"}
+          />
+        )}
+      />
+    </View>
   );
 }
 
