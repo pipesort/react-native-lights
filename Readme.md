@@ -76,7 +76,7 @@ import { CardSlider } from "react-native-lights";
 const CardSlider = () => {
 
      const cardItems = [
-        {git
+        {
           title: 'Card 1 ',
           description: 'Include images to your card',
           buttonTitle: 'Get Started',
